@@ -68,6 +68,9 @@ local msgKeywords = {
     "微:",
     "微：",
     "散买",
+    "散買",
+    "散賣",
+    "散卖",
     "面前",
     "效率",
     "开打",
@@ -89,7 +92,8 @@ local msgKeywords = {
 local addonKeywords = {
     "{rt%d}",
     "^Clear",
-    "^%d$"
+    "^%d$",
+    "^>>"
 }
 
 local blockedCache = {}
