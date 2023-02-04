@@ -1,3 +1,4 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/">
-	<Include file="QuickKeystone.lua"/>
+	<Include file="GUIDFilter.lua"/>
+	<Include file="SimpleFilters.lua"/>
 </Ui>

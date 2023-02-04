@@ -1,4 +1,4 @@
-local W, F, L, P, O = unpack(select(2, ...))
+local W, F, L, P, G, O = unpack(select(2, ...))
 local LDBI = LibStub("LibDBIcon-1.0")
 
 local _G = _G

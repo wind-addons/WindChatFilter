@@ -26,16 +26,22 @@ local options = {
             name = " ",
             width = "full"
         },
+        -- logo = {
+        --     order = 2,
+        --     type = "description",
+        --     name = "",
+        --     image = function()
+        --         return W.Media.Textures.title
+        --     end,
+        --     imageWidth = titleImageConfig.width(),
+        --     imageHeight = titleImageConfig.height(),
+        --     imageCoords = F.GetTitleTexCoord
+        -- },
+
         logo = {
             order = 2,
             type = "description",
-            name = "",
-            image = function()
-                return W.Media.Textures.title
-            end,
-            imageWidth = titleImageConfig.width(),
-            imageHeight = titleImageConfig.height(),
-            imageCoords = F.GetTitleTexCoord
+            name = L["This addon still work in progress, if you have any question or suggestion, send me via Discord."]
         },
         afterLogo = {
             order = 3,
@@ -47,14 +53,14 @@ local options = {
     }
 }
 
-ns[5] = options.args
+ns[6] = options.args
 
 function W:BuildOptions()
     options.args.profiles = ADBO:GetOptionsTable(W.Database)
     options.args.profiles.order = 1000
 
     ACR:RegisterOptionsTable(self.AddonNamePlain, options)
-    self.OptionFrame, self.OptionName = ACD:AddToBlizOptions(self.AddonNamePlain,self.AddonName)
+    self.OptionFrame, self.OptionName = ACD:AddToBlizOptions(self.AddonNamePlain, self.AddonName)
     self.DataBroker =
         LDB:NewDataObject(
         L["Wind Chat Filter"],
