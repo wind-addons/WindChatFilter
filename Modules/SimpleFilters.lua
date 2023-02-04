@@ -145,7 +145,7 @@ local function filterHandler(_, event, msg, sender, _, _, _, _, _, _, channelNam
         if event == "CHAT_MSG_CHANNEL" then
             for _, v in ipairs(padarenDKChannels) do
                 if strfind(channelName, v) then
-                    if data.englishClass == "DEATHKNIGHT" and data.englishRace == "PANDAREN" then
+                    if data.englishClass == "DEATHKNIGHT" and data.englishRace == "Pandaren" then
                         debugPrint(sender .. " be blocked by npdk")
                         return block(guid)
                     end
@@ -157,7 +157,7 @@ local function filterHandler(_, event, msg, sender, _, _, _, _, _, _, channelNam
     local map = C_Map.GetBestMapForUnit("player")
     if map and mainCityMapIDs[map] then
         if SF.db.noPadarenDK then
-            if data.englishClass == "DEATHKNIGHT" and data.englishRace == "PANDAREN" then
+            if data.englishClass == "DEATHKNIGHT" and data.englishRace == "Pandaren" then
                 debugPrint(sender .. " be blocked by npdk")
                 return block(guid)
             end
