@@ -91,7 +91,11 @@ local msgKeywords = {
     "上號",
     "上号",
     "詢價",
-    "询价"
+    "询价",
+	"童鉀",
+	"兩件全交",
+	"躺",
+	"购"
 }
 
 local addonKeywords = {
