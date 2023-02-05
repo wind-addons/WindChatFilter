@@ -21,4 +21,6 @@ Engine.Version = GetAddOnMetadata(addonName, "Version")
 Engine.AddonMsgPrefix = "WINDCF"
 Engine.Locale = GetLocale()
 
+Engine.myGUID = UnitGUID("player")
+
 _G[Engine.AddonNamePlain] = addon

@@ -126,7 +126,7 @@ local function debugPrint(...)
 end
 
 local function filterHandler(_, event, msg, sender, _, _, _, _, _, _, channelName, _, _, guid)
-    if not guid then
+    if not guid or W.myGUID == guid then
         return false
     end
 
