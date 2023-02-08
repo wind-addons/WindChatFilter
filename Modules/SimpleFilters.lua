@@ -15,6 +15,8 @@ local mainCityMapIDs = {
 local padarenDKChannels = {
     "^Trade",
     "^交易",
+    "^綜合",
+    "^综合",
     "^組隊頻道$",
     "^尋求組隊$"
 }
