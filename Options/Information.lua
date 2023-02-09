@@ -191,7 +191,7 @@ O.information = {
                             "WIND_CHAT_FILTER_EDITBOX",
                             L["Wind Chat Filter"] .. " - " .. L["NGA.cn"],
                             nil,
-                            "https://nga.178.com/read.php?tid=15265896"
+                            "https://nga.178.com/read.php?tid=35272239"
                         )
                     end,
                     width = 0.6
