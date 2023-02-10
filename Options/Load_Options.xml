@@ -2,6 +2,5 @@
 	<Script file='Core.lua'/>
 	<Script file='Information.lua'/>
 	<!-- Modules -->
-	<!-- <Script file='GUIDFilter.lua'/> -->
 	<Script file='SimpleFilters.lua'/>
 </Ui>

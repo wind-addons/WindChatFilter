@@ -1,5 +1,4 @@
 local W, F, L, P, G, O = unpack(select(2, ...))
-local QK = W:GetModule("GUIDFilter")
 
 O.simpleFilters = {
     order = 4,
