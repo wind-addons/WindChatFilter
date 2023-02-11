@@ -872,6 +872,15 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                 confirmText = L["Are you sure to remove this rule?"],
                 hidden = context.isDefault
             },
+            copyRule = {
+                type = "execute",
+                name = L["Copy Rule"],
+                order = 12,
+                func = function()
+                    F.CopyRule(context.rule, dbTable, optionTable)
+                    W:SendMessage("WCF_RULE_UPDATED")
+                end
+            },
             channel = channelOptions(context, 20),
             map = mapOptions(context, 30),
             message = messageOptions(context, 40),
@@ -1003,6 +1012,14 @@ function F.CreateNewRuleWithName(name, tbl, optTbl)
     local randomID = tostring(time()) .. tostring(random(11, 99))
     tbl[randomID] = CopyTable(emptyRule)
     tbl[randomID].name = name
+    F.RefreshRuleOptions(tbl, optTbl, randomID, tbl[randomID])
+    W:RefreshOptions()
+end
+
+function F.CopyRule(rule, tbl, optTbl)
+    local randomID = tostring(time()) .. tostring(random(11, 99))
+    tbl[randomID] = CopyTable(rule)
+    tbl[randomID].name = rule.name .. " " .. L["Copy"]
     F.RefreshRuleOptions(tbl, optTbl, randomID, tbl[randomID])
     W:RefreshOptions()
 end
