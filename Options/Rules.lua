@@ -693,13 +693,14 @@ local function playerInfoOptions(context, order)
     end
 
     local tempOrder = 10
-    local addRaceOption = function(tbl, color)
+    local addRaceOption = function(tbl, color, icon)
         for raceKey, raceID in pairs(tbl) do
             local raceInfo = C_CreatureInfo.GetRaceInfo(raceID)
             if raceInfo then
                 options.args.race.args[raceKey] = {
                     type = "toggle",
-                    name = format("|cff%s%s|r", color, raceInfo.raceName),
+                    name = (icon and F.GetIconString(icon, 16) .. " " or "") ..
+                        format("|cff%s%s|r", color, raceInfo.raceName),
                     order = tempOrder,
                     get = function(info)
                         return context.rule.playerInfo.race[info[#info]]
@@ -717,9 +718,9 @@ local function playerInfoOptions(context, order)
         end
     end
 
-    addRaceOption(englishRaceToID.neutral, "e1ba3a")
-    addRaceOption(englishRaceToID.alliance, "5769cc")
-    addRaceOption(englishRaceToID.horde, "b13032")
+    addRaceOption(englishRaceToID.neutral, "ffc500", "4238929")
+    addRaceOption(englishRaceToID.alliance, "1390df", "132486")
+    addRaceOption(englishRaceToID.horde, "c21816", "132485")
 
     local playerNameAddOptions, playerNameCustomOptions =
         customArea(
