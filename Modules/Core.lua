@@ -207,12 +207,7 @@ function CORE:OnInitialize()
         return
     end
 
-    C_Timer.After(
-        3,
-        function()
-            self:RebuildRules()
-        end
-    )
+    self:RebuildRules()
 
     C_Timer.NewTicker(
         10,
