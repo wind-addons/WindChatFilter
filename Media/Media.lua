@@ -103,3 +103,5 @@ AddMedia("kook", "KOOK.tga", "Icons")
 
 AddMedia("donateKofi", "Ko-fi.tga", "Icons")
 AddMedia("donateAiFaDian", "AiFaDian.tga", "Icons")
+
+AddMedia("smallLogo", "WindLogoSmall.tga", "Textures")
