@@ -554,10 +554,10 @@ local function playerInfoOptions(context, order)
                 order = 12,
                 inline = true,
                 get = function(info)
-                    return context.rule.playerInfo.class[info[#info]]
+                    return context.rule.playerInfo.race[info[#info]]
                 end,
                 set = function(info, value)
-                    context.rule.playerInfo.class[info[#info]] = value
+                    context.rule.playerInfo.race[info[#info]] = value
                     W:SendMessage("WCF_RULE_UPDATED")
                 end,
                 disabled = context.isDefault,
