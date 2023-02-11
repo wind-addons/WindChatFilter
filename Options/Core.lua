@@ -13,6 +13,7 @@ local Settings = Settings
 local C_Timer_After = C_Timer.After
 
 local titleImageConfig = F.GetTitleSize(0.8)
+local isRuleUpdated = false
 
 local options = {
     type = "group",
@@ -49,11 +50,30 @@ local options = {
             fontSize = "small",
             name = " \n ",
             width = "full"
+        },
+        rebuild = {
+            order = 999,
+            type = "execute",
+            name = L["Rebuild Rules"],
+            desc = L["Compile the rule to the real function for high performance filtering."],
+            width = "full",
+            hidden = function()
+                return not isRuleUpdated
+            end,
+            func = function()
+                W:GetModule("Core"):RebuildRules()
+                isRuleUpdated = false
+            end
         }
     }
 }
 
 ns[6] = options.args
+
+W.postInitFunctions = {}
+function W:AddPostInitFunction(func)
+    self.postInitFunctions[#self.postInitFunctions + 1] = func
+end
 
 function W:BuildOptions()
     options.args.profiles = ADBO:GetOptionsTable(W.Database)
@@ -79,6 +99,10 @@ function W:BuildOptions()
     )
 
     LDBI:Register(L["Wind Chat Filter"], self.DataBroker, self.db.minimapIcon)
+
+    for _, func in ipairs(self.postInitFunctions) do
+        func()
+    end
 end
 
 function W:ShowOptions()
@@ -92,3 +116,11 @@ end
 function W:RefreshOptionsAfter(second)
     C_Timer_After(second, self.RefreshOptions)
 end
+
+W:RegisterMessage(
+    "WCF_RULE_UPDATED",
+    function()
+        isRuleUpdated = true
+        W:RefreshOptions()
+    end
+)

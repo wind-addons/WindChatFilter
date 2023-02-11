@@ -1,5 +1,4 @@
 local W, F, L, P, G, O = unpack(select(2, ...))
-local LDBI = LibStub("LibDBIcon-1.0")
 
 local _G = _G
 
@@ -56,12 +55,29 @@ _G.StaticPopupDialogs["WIND_CHAT_FILTER_EDITBOX"] = {
 }
 
 O.information = {
-    order = 1,
+    order = 10,
     type = "group",
     name = L["Information"],
     args = {
-        kofi = {
+        minimapIcon = {
             order = 1,
+            name = L["Minimap icon"],
+            desc = format(L["Enables / disables %s minimap icon"], L["Wind Chat Filter"]),
+            type = "toggle",
+            set = function(info, value)
+                W.db.minimapIcon.hide = not value
+                if value then
+                    LDBI:Show(L["Wind Chat Filter"])
+                else
+                    LDBI:Hide(L["Wind Chat Filter"])
+                end
+            end,
+            get = function()
+                return not W.db.minimapIcon.hide
+            end
+        },
+        kofi = {
+            order = 2,
             type = "execute",
             name = format("%s %s (%s)", F.GetIconString(W.Media.Icons.donateKofi, 14), L["Donate"], L["Ko-fi"]),
             func = function()
@@ -77,7 +93,7 @@ O.information = {
             width = 1.2
         },
         aiFaDian = {
-            order = 2,
+            order = 3,
             type = "execute",
             name = format("%s %s (%s)", F.GetIconString(W.Media.Icons.donateAiFaDian, 14), L["Donate"], L["AiFaDian"]),
             func = function()
@@ -98,29 +114,11 @@ O.information = {
             width = 1.2
         },
         betterAlign = {
-            order = 3,
+            order = 4,
             type = "description",
             fontSize = "medium",
             name = " ",
             width = "full"
-        },
-        minimapIcon = {
-            order = 4,
-            name = L["Minimap icon"],
-            desc = format(L["Enables / disables %s minimap icon"], L["Wind Chat Filter"]),
-            type = "toggle",
-            width = "full",
-            set = function(info, value)
-                W.db.minimapIcon.hide = not value
-                if value then
-                    LDBI:Show(L["Wind Chat Filter"])
-                else
-                    LDBI:Hide(L["Wind Chat Filter"])
-                end
-            end,
-            get = function()
-                return not W.db.minimapIcon.hide
-            end
         },
         description = {
             order = 5,
@@ -153,6 +151,15 @@ O.information = {
                         "%s: %s",
                         "fang2hou",
                         F.CreateClassColorString("Tabideath @ " .. L["Shadowmoon"] .. "(TW)", "DEATHKNIGHT")
+                    )
+                },
+                ["2"] = {
+                    order = 2,
+                    type = "description",
+                    name = format(
+                        "%s: %s",
+                        "BlueNightSky",
+                        F.CreateClassColorString("三皈依 @ " .. L["Shadowmoon"] .. "(TW)", "SHAMAN")
                     )
                 }
             }
@@ -251,7 +258,7 @@ O.information = {
                             "WIND_CHAT_FILTER_EDITBOX",
                             L["Wind Chat Filter"] .. " - " .. L["Github"],
                             nil,
-                            "https://github.com/fang2hou/"..self.AddonNamePlain.."/issues"
+                            "https://github.com/fang2hou/" .. W.AddonNamePlain .. "/issues"
                         )
                     end,
                     width = 0.6
