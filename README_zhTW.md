@@ -17,17 +17,87 @@
 
 ## 💦 功能
 
-1. **黑名單**
+1. **高性能**
 
-    你可以使用各類自訂選項來設定你的私人過濾器, 並隨時在設定中啟用和禁用它們.  
-    同時, 提供了使用快取機制的選項以減少 CPU 占用.
+    Wind 聊天過濾器是一個高度優化的插件. 它可以在不影響遊戲的性能的同時, 實時過濾聊天消息.  
+    與其他過濾插件相比, Wind 聊天過濾器具有更好的邏輯使得性能提高了 8 倍之多.
 
-    過濾器包括:
-    - 熊貓人死亡騎士過濾器 (僅限於交易/尋求組隊頻道和主城)
-    - RMT 過濾器 (角色名)
-    - RMT 過濾器 (消息)
-    - 延遲插件消息過濾器 (僅限於主城大喊和說話)
-    - 未知訊息 (敵對陣營發言)
+2. **始終保持最新的預設規則**
+
+    為了提供更好的玩家體驗, 預設規則將定期更新.  
+    大多數玩家應該啟用這些規則. 當然, 您也可以在設定中隨時禁用它.  
+
+    默認規則包括:
+    - RMT 角色
+      - 一個適用於主城中的熊貓人死亡騎士的過濾規則.
+    - RMT 名字
+      - 一個用於過濾 RMT 角色名的規則.
+    - RMT 消息 1
+      - 一個用於過濾 RMT 消息的規則. 作用於 說 / 大喊 / 密語 / 表情頻道.
+    - RMT 消息 2
+      - 一個用於過濾 RMT 消息的規則. 作用於 交易 / 綜合 / 尋求組隊 頻道.
+    - 延遲插件消息
+      - 一個用於過濾延遲插件消息的規則. (例如: 雷霆 WA 喊話)
+    - 未知消息
+      - 一個用於過濾來自敵對陣營的未知消息的規則.
+
+3. **高度可定制的規則**
+
+    Wind 聊天過濾器提供了一個高度可定制的規則係統. 您可以使用各種自定義選項來設置私人過濾器, 並在任何時候在設置中啟用或禁用它們.
+
+4. **開發者友好**
+
+    有時, 您可能希望使用自己的代碼添加一些自定義規則.  
+    Wind 聊天過濾器提供了一個對開發者友好的 API, 以便您添加自己的規則.
+
+    您可以使用以下 API 來添加自己的規則:
+
+    ```lua
+    local api = _G.WindChatFilter.API
+
+    -- 過濾器的結構應該是這樣的:
+    --   - priority: 數字
+    --   - func: 一個用於接收 chatData 並返回 true/false 的函式
+
+    -- chatData 的構造應該是這樣的:
+    --   - channel: 字串
+    --   - message: 字串
+    --   - sender: 字串
+    --   - guid: 字串
+
+    -- 新增一個過濾器, 如果消息是 "test", 則會被過濾
+    api.RegisterBlackList("testFilter", {
+        priority = 1,
+        func = function(data)
+            if data.message == "test" then
+                return true
+            end
+            return false
+        end
+    })
+
+    -- 測試 1
+    api.TestWithAllFilters({
+        channel = "Say",
+        message = "test",
+        sender = "testSender",
+        guid = "testGUID"
+    })
+
+    -- 測試 2
+    api.TestWithAllFilters({
+        channel = "Guild",
+        message = "Nothing",
+        sender = "testSender",
+        guid = "testGUID"
+    })
+
+    -- 移除過濾器
+    api.UnregisterBlackList("testFilter")
+
+    -- 重建規則
+    api.RebuildRules()
+    ```
 
 ## ❤️ 鳴謝
 

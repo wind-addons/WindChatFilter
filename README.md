@@ -17,17 +17,87 @@ Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-w
 
 ## 💦 Features
 
-1. **Simple Filters**
+1. **High Performance**
 
-    You can use various custom options to set up your private filters, and enable or disable them at any time in the settings.  
-    It also provides an option to use cache for reducing the CPU usage.
+    Wind Chat Filter is a highly optimized addon. It can filter chat messages in real time, and it will not affect the performance of the game.
+    Compared with other filter addons, Wind Chat Filter has a better logic to reach 8x faster performance.
 
-    The filters include:
-    - Pandaren Death Knight filter (only for trade/lfg channel & main city)
-    - RMT filter (character name)
-    - RMT filter (message)
-    - Delayed addon message filter (only for main city yell and say)
-    - Unknown message (enemy faction chat)
+2. **Always Up-to-Date Default Rules**
+
+    In order to provide a better experience for the players, the default rules will be updated regularly.  
+    It should be enabled for most players. And of course, you can disable it at any time in the settings.
+
+    The default rules include:
+    - RMT Character
+      - A rule for filtering Pandaren Death Knight while you are in the main city.
+    - RMT Name
+      - A rule for filtering RMT character name.
+    - RMT Message 1
+      - A rule for filtering RMT message in say / yell / whisper / emote channel.
+    - RMT Message 2
+      - A rule for filtering RMT message in trade / general / lfg channel.
+    - Delayed Addon Message
+      - A rule for filtering delayed addon message in say / yell channel. (e.g. Thundering WA message)
+    - Unknown Message
+      - A rule for filtering unknown message from enemy faction.
+
+3. **Highly Customizable Rule**
+
+    Wind Chat Filter provides a highly customizable rule system. You can use various custom options to set up your private filters, and enable or disable them at any time in the settings.
+
+4. **Developer Friendly**
+
+    Sometimes, you may want to add some custom rules with your own codes.  
+    Wind Chat Filter provides a developer-friendly API for you to add your own rules.
+
+    You can use the following API to add your own rules:
+
+    ```lua
+    local api = _G.WindChatFilter.API
+
+    -- filter should have the following structure:
+    --   - priority: number
+    --   - func: function to handle `chatData`
+
+    -- chatData should have the following structure:
+    --   - channel: string
+    --   - message: string
+    --   - sender: string
+    --   - guid: string
+
+    -- add a filter that if the message is "test", it will be filtered
+    api.RegisterBlackList("testFilter", {
+        priority = 1,
+        func = function(data)
+            if data.message == "test" then
+                return true
+            end
+            return false
+        end
+    })
+
+    -- first test
+    api.TestWithAllFilters({
+        channel = "Say",
+        message = "test",
+        sender = "testSender",
+        guid = "testGUID"
+    })
+
+    -- second test
+    api.TestWithAllFilters({
+        channel = "Guild",
+        message = "Nothing",
+        sender = "testSender",
+        guid = "testGUID"
+    })
+
+    -- remove the filter
+    api.UnregisterBlackList("testFilter")
+
+    -- rebuild the cache
+    api.RebuildRules()
+    ```
 
 ## ❤️ Credits
 
