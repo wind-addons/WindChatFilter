@@ -21,16 +21,16 @@ local function AddMedia(name, file, type)
 end
 
 do
-	AddMedia("title", "WindDungeonHelperTitle.tga", "Textures")
+	AddMedia("title", "Title.tga", "Textures")
 
 	local texTable = {
 		texHeight = 512,
 		texWidth = 1024,
 		languages = {
 			-- {offsetY, width, height}
-			enUS = {0, 655, 122},
-			zhCN = {150, 375, 108},
-			zhTW = {300, 311, 108}
+			enUS = {0, 430, 102},
+			zhCN = {150, 378, 112},
+			zhTW = {300, 385, 114}
 		}
 	}
 

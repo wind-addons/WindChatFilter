@@ -27,22 +27,16 @@ local options = {
             name = " ",
             width = "full"
         },
-        -- logo = {
-        --     order = 2,
-        --     type = "description",
-        --     name = "",
-        --     image = function()
-        --         return W.Media.Textures.title
-        --     end,
-        --     imageWidth = titleImageConfig.width(),
-        --     imageHeight = titleImageConfig.height(),
-        --     imageCoords = F.GetTitleTexCoord
-        -- },
-
         logo = {
             order = 2,
             type = "description",
-            name = L["This addon still work in progress, if you have any question or suggestion, send me via Discord."]
+            name = "",
+            image = function()
+                return W.Media.Textures.title
+            end,
+            imageWidth = titleImageConfig.width(),
+            imageHeight = titleImageConfig.height(),
+            imageCoords = F.GetTitleTexCoord
         },
         afterLogo = {
             order = 3,
