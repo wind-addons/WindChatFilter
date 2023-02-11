@@ -8,6 +8,7 @@ local whiteList = {}
 local priorityOfWhiteList = {}
 
 local ruleParsers = {}
+local ruleParserOrder = {}
 
 local eventToChannel = {
     ["CHAT_MSG_CHANNEL"] = "Channel",
@@ -133,6 +134,7 @@ end
 
 function CORE:RegisterRuleParser(name, parser)
     ruleParsers[name] = parser
+    tinsert(ruleParserOrder, name)
     self:Log("info", "Registered rule parser: %s", name)
 end
 
@@ -148,8 +150,8 @@ function CORE:RebuildRules()
         if rule.enabled then
             local functionList = {}
 
-            for _, parser in pairs(ruleParsers) do
-                local func = parser(rule)
+            for _, index in ipairs(ruleParserOrder) do
+                local func = ruleParsers[index](rule)
                 if func then
                     tinsert(functionList, func)
                 end

@@ -2,6 +2,6 @@
 	<Include file="Core.lua"/>
 	<Include file="Channel.lua"/>
 	<Include file="Map.lua"/>
-	<Include file="Message.lua"/>
 	<Include file="PlayerInfo.lua"/>
+	<Include file="Message.lua"/>
 </Ui>
