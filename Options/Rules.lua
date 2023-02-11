@@ -788,7 +788,42 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
 
     local options = {
         type = "group",
-        name = rule.name,
+        name = function()
+            local prefix = ""
+            if context.isDefault then
+                prefix = F.GetIconString(W.Media.Textures.smallLogo, 14) .. " "
+            end
+            return prefix .. C.StringByTemplate(rule.name, rule.enabled and "success" or "danger")
+        end,
+        desc = function()
+            local desc = rule.description
+            desc = desc and desc ~= "" and desc .. "\n\n" or ""
+
+            if context.isDefault then
+                desc =
+                    desc ..
+                    L["This is a default rule and cannot be deleted."] ..
+                        "\n" ..
+                            format(
+                                L["Provided by %s"],
+                                F.GetIconString(W.Media.Textures.smallLogo, 14) .. " " .. W.AddonName
+                            )
+            else
+                desc = desc .. L["This is a custom rule."]
+
+                local timestamp = tonumber(strsub(ruleID, 1, -3))
+                if timestamp then
+                    desc =
+                        desc ..
+                        "\n" ..
+                            format(
+                                L["Created on %s"],
+                                C.StringByTemplate(date(L["%m-%d-%Y %H:%M:%S"], timestamp), "primary")
+                            )
+                end
+            end
+            return desc
+        end,
         order = 1000 - rule.priority,
         args = {
             general = {
