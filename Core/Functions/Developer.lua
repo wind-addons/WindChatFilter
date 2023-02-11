@@ -72,7 +72,7 @@ end
     @param ...string Message
 ]]
 function F.Developer.LogWarning(...)
-    if W.global.core.logLevel < 2 then
+    if not W.global or W.global.advanced.logLevel < 2 then
         return
     end
 
@@ -85,7 +85,7 @@ end
     @param ...string Message
 ]]
 function F.Developer.LogInfo(...)
-    if W.global.core.logLevel < 3 then
+    if not W.global or W.global.advanced.logLevel < 3 then
         return
     end
 
@@ -98,7 +98,7 @@ end
     @param ...string Message
 ]]
 function F.Developer.LogDebug(...)
-    if W.global.core.logLevel < 4 then
+    if not W.global or W.global.advanced.logLevel < 4 then
         return
     end
 
