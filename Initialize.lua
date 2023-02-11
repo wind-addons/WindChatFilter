@@ -20,6 +20,7 @@ Engine.AddonName = Locale["Wind Chat Filter"]
 Engine.Version = GetAddOnMetadata(addonName, "Version")
 Engine.AddonMsgPrefix = "WINDCF"
 Engine.Locale = GetLocale()
+Engine.isChineseClient = Engine.Locale == "zhCN" or Engine.Locale == "zhTW"
 
 Engine.myGUID = UnitGUID("player")
 
