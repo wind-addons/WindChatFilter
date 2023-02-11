@@ -3,15 +3,25 @@ local W, F, L = unpack(ns)
 local ADB = LibStub("AceDB-3.0")
 
 ns[4] = {
+    core = {
+        enable = true
+    },
     minimapIcon = {
         hide = false
+    },
+    rules = {
+        blackList = {},
+        whiteList = {}
     }
 }
 
 ns[5] = {
     advanced = {
-        logLevel = 2,
+        playerInfoCacheExpiration = 7 * 60 * 60,
+        logLevel = 4,
+        doNotUseGUIDCache = false
     },
+    playerInfoCache = {}
 }
 
 function W:BuildDatabase()
