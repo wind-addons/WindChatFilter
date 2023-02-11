@@ -2,9 +2,9 @@ local W, F, L, P, G, O = unpack(select(2, ...))
 
 local codeSnippet =
     [[
-local C = _G.WindChatFilter[1]:GetModule("Core")
+local api = _G.WindChatFilter.API
 
-C:TestWithAllFilters({
+api.TestWithAllFilters({
     channel = "Say",
     message = "This is a test message.",
     sender = "CoolName",
