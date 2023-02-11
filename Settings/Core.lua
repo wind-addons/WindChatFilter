@@ -17,8 +17,8 @@ ns[4] = {
 
 ns[5] = {
     advanced = {
-        playerInfoCacheExpiration = 7 * 60 * 60,
-        logLevel = 4,
+        playerInfoCacheExpiration = 7 * 24 * 60 * 60,
+        logLevel = 2,
         doNotUseGUIDCache = false
     },
     playerInfoCache = {}
