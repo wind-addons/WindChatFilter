@@ -857,7 +857,7 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                             rule.description = value
                         end,
                         width = "full"
-                    },
+                    }
                 }
             },
             removeRule = {
@@ -866,6 +866,7 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                 order = 11,
                 func = function()
                     F.RemoveRule(dbTable, optionTable, ruleID)
+                    W:SendMessage("WCF_RULE_UPDATED")
                 end,
                 confirm = true,
                 confirmText = L["Are you sure to remove this rule?"],
