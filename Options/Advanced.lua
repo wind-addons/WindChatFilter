@@ -18,7 +18,7 @@ O.advanced = {
     type = "group",
     args = {
         description = {
-            order = 1,
+            order = 0,
             name = L["Description"],
             type = "group",
             inline = true,
@@ -29,6 +29,27 @@ O.advanced = {
                     fontSize = "medium",
                     name = L["Here are some options for advanced users."],
                     width = "full"
+                }
+            }
+        },
+        general = {
+            order = 1,
+            name = L["General"],
+            type = "group",
+            inline = true,
+            args = {
+                includeMyself = {
+                    order = 1,
+                    type = "toggle",
+                    name = L["Include Myself"],
+                    desc = L["Filter the messages from you."],
+                    get = function(info)
+                        return W.global.advanced.includeMyself
+                    end,
+                    set = function(info, value)
+                        W.global.advanced.includeMyself = value
+                    end,
+                    width = 1.5
                 }
             }
         },

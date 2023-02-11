@@ -35,6 +35,10 @@ local function result(blocked, guid, channel)
 end
 
 local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelName, _, _, guid)
+    if not W.global.advanced.includeMyself and guid == W.myGUID then
+        return false
+    end
+
     local channel = eventToChannel[event]
     if not channel then
         return
