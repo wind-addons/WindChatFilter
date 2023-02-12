@@ -38,8 +38,21 @@ O.advanced = {
             type = "group",
             inline = true,
             args = {
-                includeMyself = {
+                stopInInstance = {
                     order = 1,
+                    type = "toggle",
+                    name = L["Stop In Instance"],
+                    desc = L["Stop filtering in instance."],
+                    get = function(info)
+                        return W.global.advanced.stopInInstance
+                    end,
+                    set = function(info, value)
+                        W.global.advanced.stopInInstance = value
+                    end,
+                    width = 1.5
+                },
+                includeMyself = {
+                    order = 2,
                     type = "toggle",
                     name = L["Include Myself"],
                     desc = L["Filter the messages from you."],
@@ -48,6 +61,32 @@ O.advanced = {
                     end,
                     set = function(info, value)
                         W.global.advanced.includeMyself = value
+                    end,
+                    width = 1.5
+                },
+                includeFriend = {
+                    order = 3,
+                    type = "toggle",
+                    name = L["Include Friend"],
+                    desc = L["Filter the messages from your friends."],
+                    get = function(info)
+                        return W.global.advanced.includeFriend
+                    end,
+                    set = function(info, value)
+                        W.global.advanced.includeFriend = value
+                    end,
+                    width = 1.5
+                },
+                includeGuildMember = {
+                    order = 4,
+                    type = "toggle",
+                    name = L["Include Guild Member"],
+                    desc = L["Filter the messages from your guild members."],
+                    get = function(info)
+                        return W.global.advanced.includeGuildMember
+                    end,
+                    set = function(info, value)
+                        W.global.advanced.includeGuildMember = value
                     end,
                     width = 1.5
                 }
