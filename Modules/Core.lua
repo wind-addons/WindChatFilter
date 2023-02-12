@@ -26,6 +26,7 @@ local eventToChannel = {
 }
 
 local handleCache = {}
+local friendCache = {}
 
 local function result(blocked, guid, channel)
     handleCache[guid .. "_" .. channel] = {
@@ -35,14 +36,40 @@ local function result(blocked, guid, channel)
     return blocked
 end
 
+local function isExcluded(guid)
+    if not W.global.advanced.includeMyself then
+        if guid == W.myGUID then
+            return true
+        end
+    end
+
+    if guid ~= W.myGUID and not W.global.advanced.includeGuildMember then
+        if IsGuildMember(guid) then
+            return true
+        end
+    end
+
+    if guid ~= W.myGUID and not W.global.advanced.includeFriend then
+        if not friendCache[guid] then
+            friendCache[guid] = (C_BattleNet.GetAccountInfoByGUID(guid) or C_FriendList.IsFriend(guid)) and 1 or -1
+        end
+
+        if friendCache[guid] == 1 then
+            return true
+        end
+    end
+
+    return false
+end
+
 local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelName, _, _, guid)
-    if not W.global.advanced.includeMyself and guid == W.myGUID then
+    if W.global.advanced.stopInInstance and IsInInstance() then
         return false
     end
 
     local channel = eventToChannel[event]
     if not channel then
-        return
+        return false
     end
 
     if channel == "Channel" then
@@ -54,6 +81,10 @@ local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelNa
         return cache.blocked
     else
         handleCache[guid .. "_" .. channel] = nil
+    end
+
+    if isExcluded(guid) then
+        return result(false, guid, channel)
     end
 
     local data = {
