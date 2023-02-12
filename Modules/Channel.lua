@@ -12,6 +12,12 @@ local generalChannelNames = {
     "^综合"
 }
 
+local newcomerChannelNames = {
+    "Newcommer Chat",
+    "新人频道",
+    "新手頻道"
+}
+
 local availableConfigKeys = {
     "say",
     "yell",
@@ -90,6 +96,14 @@ local function getChannelFilter(rule)
         if rule.channel.general then
             for _, name in pairs(generalChannelNames) do
                 if strfind(data.channel, name) then
+                    return true
+                end
+            end
+        end
+
+        if rule.channel.newcomer then
+            for _, name in pairs(newcomerChannelNames) do
+                if data.channel == name then
                     return true
                 end
             end
