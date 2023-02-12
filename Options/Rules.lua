@@ -423,13 +423,18 @@ local function channelOptions(context, order)
                     },
                     general = {
                         type = "toggle",
-                        name = L["General"],
+                        name = L["General Chat"],
                         order = 9
+                    },
+                    newcomer = {
+                        type = "toggle",
+                        name = L["Newcomer Chat"],
+                        order = 10
                     },
                     battleground = {
                         type = "toggle",
                         name = L["Battleground"],
-                        order = 10
+                        order = 11
                     }
                 }
             }
@@ -1018,6 +1023,7 @@ local emptyRule = {
         raid = false,
         trade = false,
         general = false,
+        newcomer = false,
         battleground = false,
         channelNames = {}
     },
