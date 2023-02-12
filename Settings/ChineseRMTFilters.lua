@@ -1,6 +1,10 @@
 local W, F, L, P = unpack(select(2, ...))
 
 local RMTMessagekeywords = {
+    ["賣金"] = true,
+    ["卖金"] = true,
+    ["賣G"] = true,
+    ["卖G"] = true,
     ["团本"] = true,
     ["团木"] = true,
     ["團本"] = true,
