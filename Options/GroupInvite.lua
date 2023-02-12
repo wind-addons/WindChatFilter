@@ -43,7 +43,7 @@ O.groupInvite = {
                     order = 2,
                     type = "toggle",
                     name = L["Only Friends or Guild Members"],
-                    desc = L["Only decline group invites from friends or guild members."],
+                    desc = L["Decline all group invites NOT from friends or guild members."],
                     width = "full",
                     get = function()
                         return W.db.groupInvite.onlyFriendsOrGuildMembers
