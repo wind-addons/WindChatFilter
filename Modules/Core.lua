@@ -63,6 +63,10 @@ local function isExcluded(guid)
 end
 
 local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelName, _, _, guid)
+    if not (event and msg and sender and channelName and guid) then
+        return false
+    end
+
     if W.global.advanced.stopInInstance and IsInInstance() then
         return false
     end
