@@ -42,7 +42,11 @@ O.advanced = {
                     order = 1,
                     type = "toggle",
                     name = L["Stop In Instance"],
-                    desc = L["Stop filtering in instance."],
+                    desc = L["Stop filtering in instance."] ..
+                        "\n" ..
+                            L[
+                                "Enable this option will save resource usage, but some message may not be filtered when you change zone."
+                            ],
                     get = function(info)
                         return W.global.advanced.stopInInstance
                     end,

@@ -123,6 +123,7 @@ local function customArea(context, tbl, data)
         customOptions.args[object] = {
             type = "execute",
             name = name,
+            desc = "|TInterface\\TUTORIALFRAME\\UI-TUTORIAL-FRAME:13:11:0:-1:512:512:12:66:230:307|t " .. L["Remove"],
             func = function()
                 tbl[object] = nil
                 F.Print(format(L["%s has been removed."], C.StringByTemplate(name, "info")))
@@ -831,6 +832,30 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
         end,
         order = 1000 - rule.priority,
         args = {
+            description = {
+                type = "group",
+                name = L["Description"],
+                order = 1,
+                inline = true,
+                args = {
+                    title = {
+                        type = "description",
+                        name = format(
+                            "%s %s %s",
+                            L["The sub-modules of each rule (e.g. the message module) are independent of each other."],
+                            format(
+                                L[
+                                    "When %s starts filtering, it will pass the contextual information to all enabled sub-modules, and the rule will only be matched if the data passes all sub-modules."
+                                ],
+                                W.AddonName
+                            ),
+                            L["In other words, they are AND relationships."]
+                        ),
+                        order = 1,
+                        width = "full"
+                    }
+                }
+            },
             general = {
                 type = "group",
                 name = L["General"],
@@ -934,20 +959,9 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
         options.args.general.args.ruleName.disabled = true
         options.args.general.args.ruleDescription.disabled = true
 
-        options.args.defualtRuleDescription = {
-            type = "group",
-            name = L["Notice"],
-            order = 1,
-            inline = true,
-            args = {
-                title = {
-                    type = "description",
-                    name = C.StringByTemplate(L["Some settings of default rules cannot be changed."], "warning"),
-                    order = 1,
-                    width = "full"
-                }
-            }
-        }
+        options.args.description.name = L["Notice"]
+        options.args.description.args.title.name =
+            C.StringByTemplate(L["Some settings of default rules cannot be changed."], "warning")
     end
 
     optionTable["rule_" .. ruleID] = options
