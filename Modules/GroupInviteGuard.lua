@@ -2,6 +2,8 @@ local W, F, L = unpack(select(2, ...))
 local GIG = W:NewModule("GroupInviteGuard", "AceEvent-3.0")
 
 local smartModeNames = {
+    ["靜思"] = true,
+    ["静思"] = true,
     ["提升"] = true,
     ["代充"] = true,
     ["清水"] = true,

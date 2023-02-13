@@ -88,7 +88,9 @@ local RMTMessagekeywords = {
     ["业务"] = true,
     ["新新"] = true,
     ["第1赛季"] = true,
-    ["%.%.%.%.%."] = true
+    ["%.%.%.%.%."] = true,
+    ["靜思"] = true,
+    ["静思"] = true
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
@@ -253,7 +255,9 @@ P.rules.blackList["__rmt_cn_1"] = {
             ["消費"] = true,
             ["专车"] = true,
             ["專車"] = true,
-            ["找我"] = true
+            ["找我"] = true,
+            ["靜思"] = true,
+            ["静思"] = true
         },
         realm = {}
     },
