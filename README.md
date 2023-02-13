@@ -33,9 +33,9 @@ Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-w
     - RMT Name
       - A rule for filtering RMT character name.
     - RMT Message 1
-      - A rule for filtering RMT message in say / yell / whisper / emote channel.
+      - A rule for filtering RMT message in say / yell / emote channel.
     - RMT Message 2
-      - A rule for filtering RMT message in trade / general / lfg channel.
+      - A rule for filtering RMT message in whisper / trade / general / lfg / newcomer chat channel.
     - Delayed Addon Message
       - A rule for filtering delayed addon message in say / yell channel. (e.g. Thundering WA message)
     - Unknown Message
