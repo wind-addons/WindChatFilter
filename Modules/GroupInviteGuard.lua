@@ -1,5 +1,5 @@
 local W, F, L = unpack(select(2, ...))
-local GI = W:NewModule("GroupInvite", "AceEvent-3.0")
+local GIG = W:NewModule("GroupInviteGuard", "AceEvent-3.0")
 
 local smartModeNames = {
     ["提升"] = true,
@@ -25,15 +25,17 @@ local smartModeNames = {
     ["找我"] = true
 }
 
-local function decline(name)
-    if W.db.groupInvite.displayMessageAfterRejecting then
-        W.Print(L["Rejected group invitation from %s."], name)
+function GIG:Reject(name)
+    self:Log("debug", "Rejected group invitation from player: " .. name)
+
+    if self.db.displayMessageAfterRejecting then
+        F.Print(format(L["Rejected group invitation from %s."], name))
     end
-    self:Log("debug", "Decline invite from player: " .. name)
+
     StaticPopup_Hide("PARTY_INVITE")
 end
 
-function GI:RequestHandler(_, name, _, _, _, _, _, guid)
+function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
     if not self.db.enabled then
         return
     end
@@ -50,7 +52,7 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
 
     if self.db.onlyFriendsOrGuildMembers then
         if not (isGuildMember or isFriend or isBNFriend) then
-            decline(name)
+            self:Reject(name)
         end
     end
 
@@ -60,17 +62,13 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
 
             if playerInfo then
                 if playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
-                    decline(name)
+                    self:Reject(name)
                 else
-                    local matched
                     for name, _ in pairs(smartModeNames) do
                         if strfind(playerInfo.name, name) then
-                            matched = true
+                            self:Reject(name)
                             break
                         end
-                    end
-                    if matched then
-                        decline(name)
                     end
                 end
             end
@@ -78,8 +76,8 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
     end
 end
 
-function GI:OnInitialize()
-    self.db = W.db.groupInvite
+function GIG:OnInitialize()
+    self.db = W.db.groupInviteGuard
 
     if not self.db.enabled then
         return
@@ -90,8 +88,8 @@ function GI:OnInitialize()
     self.initialized = true
 end
 
-function GI:ProfileUpdate()
-    self.db = W.db.groupInvite
+function GIG:ProfileUpdate()
+    self.db = W.db.groupInviteGuard
 
     if self.db.enabled then
         if not self.initialized then
