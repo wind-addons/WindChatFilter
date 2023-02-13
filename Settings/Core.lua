@@ -17,7 +17,7 @@ ns[4] = {
 
 ns[5] = {
     advanced = {
-        stopInInstance = true,
+        stopInInstance = false,
         includeMyself = false,
         includeFriend = false,
         includeGuildMember = false,
