@@ -70,7 +70,20 @@ O.groupInvite = {
                             W.db.groupInvite.onlyFriendsOrGuildMembers = false
                         end
                     end
-                }
+                },
+                displayMessageAfterRejecting = {
+                    order = 4,
+                    type = "toggle",
+                    name = L["Display Message After Rejecting"],
+                    desc = L["Display a message after rejecting a group invitation."],
+                    width = "full",
+                    get = function()
+                        return W.db.groupInvite.displayMessageAfterRejecting
+                    end,
+                    set = function(_, value)
+                        W.db.groupInvite.displayMessageAfterRejecting = value
+                    end
+                },
             }
         }
     }

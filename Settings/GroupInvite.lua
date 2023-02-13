@@ -4,4 +4,5 @@ P.groupInvite = {
     enabled = true,
     onlyFriendsOrGuildMembers = false,
     smartMode = true,
+    displayMessageAfterRejecting = true,
 }

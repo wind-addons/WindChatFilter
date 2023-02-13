@@ -25,6 +25,14 @@ local smartModeNames = {
     ["找我"] = true
 }
 
+local function decline(name)
+    if W.db.groupInvite.displayMessageAfterRejecting then
+        W.Print(L["Rejected group invitation from %s."], name)
+    end
+    self:Log("debug", "Decline invite from player: " .. name)
+    StaticPopup_Hide("PARTY_INVITE")
+end
+
 function GI:RequestHandler(_, name, _, _, _, _, _, guid)
     if not self.db.enabled then
         return
@@ -42,8 +50,7 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
 
     if self.db.onlyFriendsOrGuildMembers then
         if not (isGuildMember or isFriend or isBNFriend) then
-            self:Log("debug", "Decline invite from player: " .. name)
-            StaticPopup_Hide("PARTY_INVITE")
+            decline(name)
         end
     end
 
@@ -53,8 +60,7 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
 
             if playerInfo then
                 if playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
-                    self:Log("debug", "Decline invite from pandaren player: " .. playerInfo.name)
-                    StaticPopup_Hide("PARTY_INVITE")
+                    decline(name)
                 else
                     local matched
                     for name, _ in pairs(smartModeNames) do
@@ -63,9 +69,8 @@ function GI:RequestHandler(_, name, _, _, _, _, _, guid)
                             break
                         end
                     end
-                    if not matched then
-                        self:Log("debug", "Decline invite from player: " .. playerInfo.name)
-                        StaticPopup_Hide("PARTY_INVITE")
+                    if matched then
+                        decline(name)
                     end
                 end
             end
