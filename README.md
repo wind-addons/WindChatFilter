@@ -43,8 +43,8 @@ Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-w
 
 1. **Group Invite Guard**
 
-Recently, the RMT characters have been frequently inviting players to send their ads. You can use the Group Invite Guard module in Wind Chat Filter to automatically reject their invites.  
-If you are in a server where the RMT characters are extremely aggressive, you can also use the option to only allow friends or guild members to invite you.
+    Recently, the RMT characters have been frequently inviting players to send their ads. You can use the Group Invite Guard module in Wind Chat Filter to automatically reject their invites.  
+    If you are in a server where the RMT characters are extremely aggressive, you can also use the option to only allow friends or guild members to invite you.
 
 1. **Highly Customizable Rule**
 
