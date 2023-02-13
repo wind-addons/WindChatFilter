@@ -1,13 +1,13 @@
 <div align="center">
 <img width="512" src="Title.svg"/><br><br>
-<img src="https://img.shields.io/badge/版本-1.1.6-green.svg?longCache=true&style=for-the-badge"/>
+<img src="https://img.shields.io/badge/版本-1.1.7-green.svg?longCache=true&style=for-the-badge"/>
 
 [English (enUS)](README.md) | [简体中文 (zhCN)](README_zhCN.md)
 </div>
 
 # ✅ 狀態
 
-![發布狀態](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.6) [![加入 Discord 伺服器](https://img.shields.io/badge/Wind%20Plugins-加入-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/SPqB72z7TK)
+![發布狀態](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.7) [![加入 Discord 伺服器](https://img.shields.io/badge/Wind%20Plugins-加入-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/SPqB72z7TK)
 
 下載點: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [Github 發布](https://github.com/fang2hou/WindChatFilter/releases)
 
@@ -22,7 +22,7 @@
     Wind 聊天過濾器是一個高度優化的插件. 它可以在不影響遊戲的性能的同時, 實時過濾聊天消息.  
     與其他過濾插件相比, Wind 聊天過濾器具有更好的邏輯使得性能提高了 8 倍之多.
 
-2. **始終保持最新的預設規則**
+1. **始終保持最新的預設規則**
 
     為了提供更好的玩家體驗, 預設規則將定期更新.  
     大多數玩家應該啟用這些規則. 當然, 您也可以在設定中隨時禁用它.  
@@ -41,11 +41,16 @@
     - 未知消息
       - 一個用於過濾來自敵對陣營的未知消息的規則.
 
-3. **高度可定制的規則**
+1. **組隊防護**
+
+近期工作室頻繁進行組隊騷擾, 您可以使用 Wind 聊天過濾器中的組隊防護模組來智能屏蔽他們.  
+如果您身處工作室行為極其猖狂的伺服器, 您也可以使用只允許好友或者公會成員邀請的選項.
+
+1. **高度可定制的規則**
 
     Wind 聊天過濾器提供了一個高度可定制的規則係統. 您可以使用各種自定義選項來設置私人過濾器, 並在任何時候在設置中啟用或禁用它們.
 
-4. **開發者友好**
+2. **開發者友好**
 
     有時, 您可能希望使用自己的代碼添加一些自定義規則.  
     Wind 聊天過濾器提供了一個對開發者友好的 API, 以便您添加自己的規則.

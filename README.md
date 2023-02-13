@@ -1,13 +1,13 @@
 <div align="center">
 <img width="512" src="Title.svg"/><br><br>
-<img src="https://img.shields.io/badge/Version-1.1.6-green.svg?longCache=true&style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Version-1.1.7-green.svg?longCache=true&style=for-the-badge"/>
 
 [简体中文 (zhCN)](README_zhCN.md) | [繁體中文 (zhTW)](README_zhTW.md)
 </div>
 
 # ✅ Status
 
-![Publish State](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.6) [![Join Discord Server](https://img.shields.io/badge/Wind%20Plugins-Join-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/WHDER5SATV)
+![Publish State](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.7) [![Join Discord Server](https://img.shields.io/badge/Wind%20Plugins-Join-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/WHDER5SATV)
 
 Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [Github Release](https://github.com/fang2hou/WindChatFilter/releases)
 
@@ -22,7 +22,7 @@ Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-w
     Wind Chat Filter is a highly optimized addon. It can filter chat messages in real time, and it will not affect the performance of the game.
     Compared with other filter addons, Wind Chat Filter has a better logic to reach 8x faster performance.
 
-2. **Always Up-to-Date Default Rules**
+1. **Always Up-to-Date Default Rules**
 
     In order to provide a better experience for the players, the default rules will be updated regularly.  
     It should be enabled for most players. And of course, you can disable it at any time in the settings.
@@ -41,11 +41,16 @@ Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-w
     - Unknown Message
       - A rule for filtering unknown message from enemy faction.
 
-3. **Highly Customizable Rule**
+1. **Group Invite Guard**
+
+Recently, the RMT characters have been frequently inviting players to send their ads. You can use the Group Invite Guard module in Wind Chat Filter to automatically reject their invites.  
+If you are in a server where the RMT characters are extremely aggressive, you can also use the option to only allow friends or guild members to invite you.
+
+1. **Highly Customizable Rule**
 
     Wind Chat Filter provides a highly customizable rule system. You can use various custom options to set up your private filters, and enable or disable them at any time in the settings.
 
-4. **Developer Friendly**
+1. **Developer Friendly**
 
     Sometimes, you may want to add some custom rules with your own codes.  
     Wind Chat Filter provides a developer-friendly API for you to add your own rules.
