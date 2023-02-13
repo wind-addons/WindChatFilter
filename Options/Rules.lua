@@ -40,12 +40,12 @@ local function isDefaultRule(ruleID)
     return strsub(ruleID, 1, 2) == "__"
 end
 
-local function coloredToggleName(tbl, key)
+local function coloredToggleName(tbl, key, default)
     local k = key or "enabled"
     if tbl[k] then
-        return C.StringByTemplate(L["Enabled"], "success")
+        return default and L["Enabled"] or C.StringByTemplate(L["Enabled"], "success")
     else
-        return C.StringByTemplate(L["Disabled"], "danger")
+        return default and L["Disabled"] or C.StringByTemplate(L["Disabled"], "danger")
     end
 end
 
@@ -156,7 +156,7 @@ local function mapOptions(context, order)
             enabled = {
                 type = "toggle",
                 name = function(info)
-                    return coloredToggleName(context.rule.map)
+                    return coloredToggleName(context.rule.map, nil, context.isDefault)
                 end,
                 desc = L["Filter by the map where player is in."],
                 disabled = context.isDefault,
@@ -265,7 +265,7 @@ local function messageOptions(context, order)
             enabled = {
                 type = "toggle",
                 name = function(info)
-                    return coloredToggleName(context.rule.message)
+                    return coloredToggleName(context.rule.message, nil, context.isDefault)
                 end,
                 desc = L["Filter by the specific keywords in the message."],
                 disabled = context.isDefault,
@@ -339,7 +339,7 @@ local function channelOptions(context, order)
             enabled = {
                 type = "toggle",
                 name = function(info)
-                    return coloredToggleName(context.rule.channel)
+                    return coloredToggleName(context.rule.channel, nil, context.isDefault)
                 end,
                 desc = L["Filter by the channel category or names."],
                 disabled = context.isDefault,
@@ -520,7 +520,7 @@ local function playerInfoOptions(context, order)
             enabled = {
                 type = "toggle",
                 name = function(info)
-                    return coloredToggleName(context.rule.playerInfo)
+                    return coloredToggleName(context.rule.playerInfo, nil, context.isDefault)
                 end,
                 desc = L["Filter by the channel category or names."],
                 disabled = context.isDefault,
@@ -540,7 +540,7 @@ local function playerInfoOptions(context, order)
                         order = 1,
                         type = "toggle",
                         name = function(info)
-                            return coloredToggleName(context.rule.playerInfo.config, "class")
+                            return coloredToggleName(context.rule.playerInfo.config, "class", context.isDefault)
                         end,
                         get = function(info)
                             return context.rule.playerInfo.config.class
@@ -575,7 +575,7 @@ local function playerInfoOptions(context, order)
                         order = 1,
                         type = "toggle",
                         name = function(info)
-                            return coloredToggleName(context.rule.playerInfo.config, "race")
+                            return coloredToggleName(context.rule.playerInfo.config, "race", context.isDefault)
                         end,
                         get = function(info)
                             return context.rule.playerInfo.config.race
@@ -628,7 +628,7 @@ local function playerInfoOptions(context, order)
                         order = 1,
                         type = "toggle",
                         name = function(info)
-                            return coloredToggleName(context.rule.playerInfo.config, "name")
+                            return coloredToggleName(context.rule.playerInfo.config, "name", context.isDefault)
                         end,
                         get = function(info)
                             return context.rule.playerInfo.config.name
@@ -655,7 +655,7 @@ local function playerInfoOptions(context, order)
                         order = 1,
                         type = "toggle",
                         name = function(info)
-                            return coloredToggleName(context.rule.playerInfo.config, "realm")
+                            return coloredToggleName(context.rule.playerInfo.config, "realm", context.isDefault)
                         end,
                         get = function(info)
                             return context.rule.playerInfo.config.realm
