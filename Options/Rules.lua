@@ -1075,9 +1075,11 @@ end
 
 function F.CopyRule(rule, tbl, optTbl)
     local randomID = tostring(time()) .. tostring(random(11, 99))
-    tbl[randomID] = CopyTable(rule)
-    tbl[randomID].name = rule.name .. " " .. L["Copy"]
-    F.RefreshRuleOptions(tbl, optTbl, randomID, tbl[randomID])
+    local newRule = CopyTable(rule)
+    newRule.priority = max(newRule.priority + 1, 1)
+    newRule.name = rule.name .. " " .. L["Copy"]
+    F.RefreshRuleOptions(tbl, optTbl, randomID, newRule)
+    tbl[randomID] = newRule
     W:RefreshOptions()
 end
 
