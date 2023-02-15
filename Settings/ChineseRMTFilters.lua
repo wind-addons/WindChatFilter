@@ -545,9 +545,14 @@ P.rules.blackList["__main_city_1"] = {
         keywords = {
             ["^%{方形%}"] = true,
             ["^%{十字%}"] = true,
+            ["^%{三角%}"] = true,
             ["^Clear"] = true,
             ["^Cleared"] = true,
-            ["中了"] = true
+            ["^已消除"] = true,
+            ["^消除"] = true,
+            ["^%d$"] = true,
+            ["中了"] = true,
+            ["^%playerName%"] = true
         }
     }
 }
