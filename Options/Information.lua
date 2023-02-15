@@ -133,14 +133,14 @@ O.information = {
                     L["QQ Group"],
                     L["Discord"],
                     L["KOOK"],
-                    L["Github"],
+                    L["GitHub"],
                     L["NGA.cn"]
                 )
             )
         },
         contributors = {
             order = 6,
-            name = L["Contributors (Github.com)"],
+            name = L["Contributors (GitHub.com)"],
             type = "group",
             inline = true,
             args = {
@@ -251,12 +251,12 @@ O.information = {
                 github = {
                     order = 5,
                     type = "execute",
-                    name = L["Github"],
+                    name = L["GitHub"],
                     image = W.Media.Icons.github,
                     func = function()
                         StaticPopup_Show(
                             "WIND_CHAT_FILTER_EDITBOX",
-                            L["Wind Chat Filter"] .. " - " .. L["Github"],
+                            L["Wind Chat Filter"] .. " - " .. L["GitHub"],
                             nil,
                             "https://github.com/fang2hou/" .. W.AddonNamePlain .. "/issues"
                         )

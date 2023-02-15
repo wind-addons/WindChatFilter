@@ -31,7 +31,7 @@ L["Click to toggle config window."] = true
 L["Code"] = true
 L["Code Snippet"] = true
 L["Compile the rule to the real function for high performance filtering."] = true
-L["Contributors (Github.com)"] = "Contributeurs (Github.com)"
+L["Contributors (GitHub.com)"] = "Contributeurs (GitHub.com)"
 L["Copy"] = true
 L["Copy Rule"] = true
 L["Create"] = true
@@ -85,7 +85,7 @@ L["Filter the messages in say / yell / whisper / emote channel with default keyw
 L["Filter the messages in trade / general channel with default keywords."] = true
 L["General"] = "Général"
 L["General Chat"] = true
-L["Github"] = "Github"
+L["GitHub"] = "GitHub"
 L["Group Invite Guard"] = true
 L["Guild"] = "Guilde"
 L["Help"] = "Aide"

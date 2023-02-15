@@ -31,7 +31,7 @@ L["Click to toggle config window."] = "點擊開啟設定視窗."
 L["Code"] = "程式碼"
 L["Code Snippet"] = "程式碼片段"
 L["Compile the rule to the real function for high performance filtering."] = "編譯規則為實際函數以提高過濾效能."
-L["Contributors (Github.com)"] = "程式碼貢獻者 (Github.com)"
+L["Contributors (GitHub.com)"] = "程式碼貢獻者 (GitHub.com)"
 L["Copy"] = "複製"
 L["Copy Rule"] = "複製規則"
 L["Create"] = "建立"
@@ -85,7 +85,7 @@ L["Filter the messages in say / yell / whisper / emote channel with default keyw
 L["Filter the messages in trade / general channel with default keywords."] = "使用預設關鍵字過濾 交易 / 綜合 頻道中的訊息."
 L["General"] = "一般設定"
 L["General Chat"] = "綜合頻道"
-L["Github"] = true
+L["GitHub"] = true
 L["Group Invite Guard"] = "組隊防護"
 L["Guild"] = "公會"
 L["Help"] = "幫助"

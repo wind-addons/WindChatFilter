@@ -31,7 +31,7 @@ L["Click to toggle config window."] = true
 L["Code"] = true
 L["Code Snippet"] = true
 L["Compile the rule to the real function for high performance filtering."] = true
-L["Contributors (Github.com)"] = "기여자(Github.com)"
+L["Contributors (GitHub.com)"] = "기여자(GitHub.com)"
 L["Copy"] = true
 L["Copy Rule"] = true
 L["Create"] = true
@@ -85,7 +85,7 @@ L["Filter the messages in say / yell / whisper / emote channel with default keyw
 L["Filter the messages in trade / general channel with default keywords."] = true
 L["General"] = "일반"
 L["General Chat"] = true
-L["Github"] = true
+L["GitHub"] = true
 L["Group Invite Guard"] = true
 L["Guild"] = "길드"
 L["Help"] = "도움말"

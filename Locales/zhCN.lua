@@ -31,7 +31,7 @@ L["Click to toggle config window."] = "点击开启设置窗口."
 L["Code"] = "代码"
 L["Code Snippet"] = "代码片段"
 L["Compile the rule to the real function for high performance filtering."] = "编译规则为实际函数以提高过滤性能."
-L["Contributors (Github.com)"] = "代码贡献者 (Github.com)"
+L["Contributors (GitHub.com)"] = "代码贡献者 (GitHub.com)"
 L["Copy"] = "复制"
 L["Copy Rule"] = "复制规则"
 L["Create"] = "创建"
@@ -85,7 +85,7 @@ L["Filter the messages in say / yell / whisper / emote channel with default keyw
 L["Filter the messages in trade / general channel with default keywords."] = "使用默认默认关键词过滤 交易 / 本地综合 频道中的消息."
 L["General"] = "一般"
 L["General Chat"] = "本地综合"
-L["Github"] = true
+L["GitHub"] = true
 L["Group Invite Guard"] = "组队防护"
 L["Guild"] = "公会"
 L["Help"] = "帮助"

@@ -9,7 +9,7 @@
 
 ![发布测试状态](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.9) [![加入 Discord 服务器](https://img.shields.io/badge/Wind%20Plugins-加入-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/SPqB72z7TK)
 
-下载地址: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [Github 发布](https://github.com/fang2hou/WindChatFilter/releases)
+下载地址: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [GitHub 发布](https://github.com/fang2hou/WindChatFilter/releases)
 
 ## 🌟 介绍
 

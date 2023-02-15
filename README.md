@@ -9,7 +9,7 @@
 
 ![Publish State](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.1.9) [![Join Discord Server](https://img.shields.io/badge/Wind%20Plugins-Join-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/WHDER5SATV)
 
-Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [Github Release](https://github.com/fang2hou/WindChatFilter/releases)
+Download Sites: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [GitHub Release](https://github.com/fang2hou/WindChatFilter/releases)
 
 ## 🌟 Introduction
 

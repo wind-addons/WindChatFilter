@@ -24,7 +24,7 @@ jobs:
           WOWI_API_TOKEN: ${{ secrets.WOWI_API_TOKEN }}
           WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
 
-      - name: Upload to Github Actions
+      - name: Upload to GitHub Actions
         uses: actions/upload-artifact@v2
         with:
           name: WindChatFilter

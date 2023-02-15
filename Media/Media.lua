@@ -96,7 +96,7 @@ end
 AddMedia("icon", "Icon.tga", "Icons")
 
 AddMedia("discord", "Discord.tga", "Icons")
-AddMedia("github", "Github.tga", "Icons")
+AddMedia("github", "GitHub.tga", "Icons")
 AddMedia("nga", "NGA.tga", "Icons")
 AddMedia("qq", "QQ.tga", "Icons")
 AddMedia("kook", "KOOK.tga", "Icons")
