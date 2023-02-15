@@ -888,6 +888,7 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                         end,
                         set = function(info, value)
                             rule.priority = value
+                            F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                             W:SendMessage("WCF_RULE_UPDATED")
                         end,
                         desc = function()
