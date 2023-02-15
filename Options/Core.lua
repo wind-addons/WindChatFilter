@@ -49,7 +49,7 @@ local options = {
             order = 999,
             type = "execute",
             name = L["Rebuild Rules"],
-            desc = L["Compile the rule to the real function for high performance filtering."],
+            desc = L["You must recomplie the rules to apply the changes."],
             width = "full",
             hidden = function()
                 return not isRuleUpdated
