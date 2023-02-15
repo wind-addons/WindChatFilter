@@ -142,7 +142,7 @@ O.advanced = {
                     type = "select",
                     name = L["Log Level"],
                     desc = L["Only display log message that the level is higher than you choose."] ..
-                        "\n|cffff3860" .. L["Set to 2 if you do not understand the meaning of log level."] .. "|r",
+                        "\n|cffff3860" .. L["Set to 1 if you do not understand the meaning of log level."] .. "|r",
                     get = function(info)
                         return W.global.advanced.logLevel
                     end,
