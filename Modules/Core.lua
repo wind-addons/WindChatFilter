@@ -1,5 +1,5 @@
 local W, F, L = unpack(select(2, ...))
-local CORE = W:NewModule("Core")
+local CORE = W:NewModule("Core", "AceEvent-3.0")
 
 local blackList = {}
 local priorityOfBlackList = {}
@@ -235,6 +235,21 @@ function CORE:RebuildRules()
     end
 end
 
+function CORE:MapChanging()
+    local now = time()
+    self.mapChanging = true
+    self.mapChangingTime = time()
+
+    C_Timer.After(
+        3,
+        function()
+            if self.mapChangingTime == now then
+                self.mapChanging = false
+            end
+        end
+    )
+end
+
 function CORE:OnInitialize()
     self.db = W.db.core
 
@@ -243,6 +258,8 @@ function CORE:OnInitialize()
     end
 
     self:RebuildRules()
+    self:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE", "MapChanging")
+    self:RegisterEvent("PLAYER_ENTERING_WORLD", "MapChanging")
 
     C_Timer.NewTicker(
         10,

@@ -22,6 +22,16 @@ local function getMapFilter(rule)
     end
 
     return function(data)
+        if CORE.mapChanging then
+            C_Timer.After(
+                1,
+                function()
+                    CORE:Log("debug", "Map changing, ignore this event. message: " .. data.message)
+                end
+            )
+            return true
+        end
+
         local map = C_Map.GetBestMapForUnit("player")
         if not map then
             return false
