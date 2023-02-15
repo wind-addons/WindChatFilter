@@ -75,6 +75,7 @@ local function customArea(context, tbl, data)
             inputArea = {
                 type = "input",
                 name = data.addInputTitle,
+                desc = data.addInputDesc,
                 order = 10,
                 get = function(info)
                     return addTemp
@@ -302,6 +303,8 @@ local function messageOptions(context, order)
             previewWithString = nil,
             addTitle = L["Add Keyword"],
             addInputTitle = L["Keyword"],
+            addInputDesc = L["Placeholder"] ..
+                format("\n\n%s %s", C.StringByTemplate("%playerName%", "info"), L["Player Name"]),
             addButtonText = L["Add"],
             addDuplicateMessage = L["This keyword has already been added."],
             customVerifier = nil,
