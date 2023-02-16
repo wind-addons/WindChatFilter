@@ -948,6 +948,7 @@ function F.RefreshRuleOptions(dbTable, optionTable, ruleID, rule)
                         set = function(info, value)
                             rule.description = value
                         end,
+                        multiline = 3,
                         width = "full"
                     }
                 }
