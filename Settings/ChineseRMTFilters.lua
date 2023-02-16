@@ -643,10 +643,101 @@ P.rules.blackList["__main_city_2"] = {
 }
 
 P.rules.blackList["__addon_1"] = {
-    enabled = false,
+    enabled = true,
     name = L["Addon Message"],
     description = L["Filter messages that send from addons."],
     priority = -30,
+    playerInfo = {
+        enabled = false,
+        config = {
+            race = false,
+            class = false,
+            name = false,
+            realm = false
+        },
+        class = {
+            DEMONHUNTER = false,
+            DEATHKNIGHT = false,
+            WARRIOR = false,
+            MAGE = false,
+            ROGUE = false,
+            DRUID = false,
+            HUNTER = false,
+            SHAMAN = false,
+            PRIEST = false,
+            WARLOCK = false,
+            PALADIN = false,
+            MONK = false,
+            EVOKER = false
+        },
+        race = {
+            Pandaren = false,
+            Dracthyr = false,
+            Human = false,
+            Dwarf = false,
+            NightElf = false,
+            Gnome = false,
+            Draenei = false,
+            Worgen = false,
+            VoidElf = false,
+            LightforgedDraenei = false,
+            DarkIronDwarf = false,
+            KulTiran = false,
+            Mechagnome = false,
+            Orc = false,
+            Scourge = false,
+            Tauren = false,
+            Troll = false,
+            BloodElf = false,
+            Goblin = false,
+            Nightborne = false,
+            HighmountainTauren = false,
+            MagharOrc = false,
+            ZandalariTroll = false,
+            Vulpera = false,
+            includeHostileFaction = false,
+            includeNeutral = false
+        },
+        name = {},
+        realm = {}
+    },
+    channel = {
+        enabled = true,
+        say = true,
+        yell = true,
+        whisper = false,
+        emote = true,
+        guild = false,
+        party = true,
+        raid = true,
+        trade = false,
+        general = false,
+        newcomer = false,
+        battleground = true,
+        channelNames = {}
+    },
+    map = {
+        enabled = false,
+        mainCity = false,
+        mapIDs = {}
+    },
+    message = {
+        enabled = true,
+        keywords = {
+            ["^EUI"] = true,
+            ["^<iLvl>"] = true,
+            ["^<LFG>"] = true,
+            ["^<大腳"] = true,
+            ["^<大脚"] = true
+        }
+    }
+}
+
+P.rules.blackList["__addon_2"] = {
+    enabled = false,
+    name = L["Addon Announcement"],
+    description = L["Filter some announcement messages if you feel annoying."],
+    priority = -31,
     playerInfo = {
         enabled = false,
         config = {
