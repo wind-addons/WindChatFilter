@@ -1,5 +1,9 @@
 local W, F, L = unpack(select(2, ...))
+
+local _G = _G
 local format = format
+local strlower = strlower
+local strupper = strupper
 
 W.Media = {
 	Icons = {},

@@ -1,6 +1,16 @@
 local W, F, L = unpack(select(2, ...))
 local GIG = W:NewModule("GroupInviteGuard", "AceEvent-3.0")
 
+local format = format
+local pairs = pairs
+local strfind = strfind
+
+local IsGuildMember = IsGuildMember
+local StaticPopup_Hide = StaticPopup_Hide
+
+local C_BattleNet_GetAccountInfoByGUID = C_BattleNet.GetAccountInfoByGUID
+local C_FriendList_IsFriend = C_FriendList.IsFriend
+
 local smartModeNames = {
     ["靜思"] = true,
     ["静思"] = true,
@@ -47,8 +57,8 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
     end
 
     local isGuildMember = IsGuildMember(guid)
-    local isFriend = C_FriendList.IsFriend(guid)
-    local isBNFriend = C_BattleNet.GetAccountInfoByGUID(guid) ~= nil
+    local isFriend = C_FriendList_IsFriend(guid)
+    local isBNFriend = C_BattleNet_GetAccountInfoByGUID(guid) ~= nil
 
     local playerInfo = F.FetchPlayerInfo(guid)
 

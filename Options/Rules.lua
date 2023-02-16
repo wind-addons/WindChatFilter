@@ -1,6 +1,28 @@
 local W, F, L, P, G, O = unpack(select(2, ...))
 local C = W.Utilities.Color
 
+local date = date
+local format = format
+local max = max
+local pairs = pairs
+local pcall = pcall
+local random = random
+local select = select
+local strsub = strsub
+local time = time
+local tonumber = tonumber
+local tostring = tostring
+
+local CopyTable = CopyTable
+local GetClassColor = GetClassColor
+local GetNumClasses = GetNumClasses
+local StaticPopup_Show = StaticPopup_Show
+
+local C_CreatureInfo_GetClassInfo = C_CreatureInfo.GetClassInfo
+local C_CreatureInfo_GetRaceInfo = C_CreatureInfo.GetRaceInfo
+local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
+local C_Map_GetMapInfo = C_Map.GetMapInfo
+
 _G.StaticPopupDialogs["WIND_CHAT_FILTER_NEW_RULE"] = {
     text = L["New Rule Name"],
     button1 = L["Create"],
@@ -187,8 +209,8 @@ local function mapOptions(context, order)
                         order = 1,
                         type = "description",
                         name = function()
-                            local mapID = C_Map.GetBestMapForUnit("player")
-                            local ok, info = pcall(C_Map.GetMapInfo, mapID)
+                            local mapID = C_Map_GetBestMapForUnit("player")
+                            local ok, info = pcall(C_Map_GetMapInfo, mapID)
                             if ok and info and info.name then
                                 return format(
                                     L["Current Map:"] .. " %s (%s)",
@@ -212,7 +234,7 @@ local function mapOptions(context, order)
         context.rule.map.mapIDs,
         {
             previewWithString = function(value)
-                local ok, info = pcall(C_Map.GetMapInfo, value)
+                local ok, info = pcall(C_Map_GetMapInfo, value)
                 if ok and info and info.name then
                     return C.StringByTemplate(info.name, "info")
                 else
@@ -224,7 +246,7 @@ local function mapOptions(context, order)
             addButtonText = L["Add"],
             addDuplicateMessage = L["This map has already been added."],
             customVerifier = function(value)
-                local ok, info = pcall(C_Map.GetMapInfo, value)
+                local ok, info = pcall(C_Map_GetMapInfo, value)
                 if ok and info and info.name then
                     return true, info.name
                 else
@@ -233,7 +255,7 @@ local function mapOptions(context, order)
             end,
             customTitle = L["Custom Maps"],
             objectToName = function(object)
-                local ok, info = pcall(C_Map.GetMapInfo, object)
+                local ok, info = pcall(C_Map_GetMapInfo, object)
                 return info.name
             end,
             order = 13,
@@ -676,7 +698,7 @@ local function playerInfoOptions(context, order)
     }
 
     for i = 1, GetNumClasses() do
-        local classInfo = C_CreatureInfo.GetClassInfo(i)
+        local classInfo = C_CreatureInfo_GetClassInfo(i)
         if classInfo.classFile then
             local hex = select(4, GetClassColor(classInfo.classFile))
             options.args.class.args[classInfo.classFile] = {
@@ -704,7 +726,7 @@ local function playerInfoOptions(context, order)
     local tempOrder = 10
     local addRaceOption = function(tbl, color, icon)
         for raceKey, raceID in pairs(tbl) do
-            local raceInfo = C_CreatureInfo.GetRaceInfo(raceID)
+            local raceInfo = C_CreatureInfo_GetRaceInfo(raceID)
             if raceInfo then
                 options.args.race.args[raceKey] = {
                     type = "toggle",

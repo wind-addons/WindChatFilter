@@ -1,6 +1,12 @@
 local W, F, L = unpack(select(2, ...))
 local CORE = W:GetModule("Core")
 
+local gsub = gsub
+local next = next
+local pairs = pairs
+local strfind = strfind
+local strsplit = strsplit
+
 local function getMessageFilter(rule)
     if not rule.message or not rule.message.enabled then
         return nil

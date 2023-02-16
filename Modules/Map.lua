@@ -1,6 +1,12 @@
 local W, F, L = unpack(select(2, ...))
 local CORE = W:GetModule("Core")
 
+local next = next
+local pairs = pairs
+
+local C_Map_GetBestMapForUnit = C_Map.GetBestMapForUnit
+local C_Timer_After = C_Timer.After
+
 local mainCityMaps = {
     [84] = true, -- Stormwind City
     [85] = true, --	Orgrimmar - Orgrimmar
@@ -23,7 +29,7 @@ local function getMapFilter(rule)
 
     return function(data)
         if CORE.mapChanging then
-            C_Timer.After(
+            C_Timer_After(
                 1,
                 function()
                     CORE:Log("debug", "Map changing, ignore this event. message: " .. data.message)
@@ -32,7 +38,7 @@ local function getMapFilter(rule)
             return true
         end
 
-        local map = C_Map.GetBestMapForUnit("player")
+        local map = C_Map_GetBestMapForUnit("player")
         if not map then
             return false
         end

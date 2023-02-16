@@ -1,6 +1,10 @@
 local W, F, L = unpack(select(2, ...))
 local CORE = W:GetModule("Core")
 
+local next = next
+local pairs = pairs
+local strfind = strfind
+
 local tradeChannelNames = {
     "^Trade",
     "^交易"

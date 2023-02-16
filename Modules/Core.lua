@@ -1,6 +1,24 @@
 local W, F, L = unpack(select(2, ...))
 local CORE = W:NewModule("Core", "AceEvent-3.0")
 
+local format = format
+local ipairs = ipairs
+local pairs = pairs
+local sort = sort
+local time = time
+local tinsert = tinsert
+local wipe = wipe
+
+local ChatFrame_AddMessageEventFilter = ChatFrame_AddMessageEventFilter
+local ChatFrame_RemoveMessageEventFilter = ChatFrame_RemoveMessageEventFilter
+local IsGuildMember = IsGuildMember
+local IsInInstance = IsInInstance
+
+local C_BattleNet_GetAccountInfoByGUID = C_BattleNet.GetAccountInfoByGUID
+local C_FriendList_IsFriend = C_FriendList.IsFriend
+local C_Timer_After = C_Timer.After
+local C_Timer_NewTicker = C_Timer.NewTicker
+
 local blackList = {}
 local priorityOfBlackList = {}
 
@@ -51,7 +69,7 @@ local function isExcluded(guid)
 
     if guid ~= W.myGUID and not W.global.advanced.includeFriend then
         if not friendCache[guid] then
-            friendCache[guid] = (C_BattleNet.GetAccountInfoByGUID(guid) or C_FriendList.IsFriend(guid)) and 1 or -1
+            friendCache[guid] = (C_BattleNet_GetAccountInfoByGUID(guid) or C_FriendList_IsFriend(guid)) and 1 or -1
         end
 
         if friendCache[guid] == 1 then
@@ -213,11 +231,12 @@ function CORE:RebuildRules()
 
     for _, rule in pairs(rules.whiteList) do
         if rule.enabled then
+            local functionList = {}
             local filter = {
                 priority = rule.priority,
-                functionList = {},
+                functionList = functionList,
                 func = function(data)
-                    for _, func in ipairs(filter.functionList) do
+                    for _, func in ipairs(functionList) do
                         if not func(data) then
                             return false
                         end
@@ -227,7 +246,7 @@ function CORE:RebuildRules()
             }
 
             for _, parser in pairs(ruleParsers) do
-                tinsert(filter.functionList, parser(rule))
+                tinsert(functionList, parser(rule))
             end
 
             self:RegisterWhiteList(rule.name, filter)
@@ -240,7 +259,7 @@ function CORE:MapChanging()
     self.mapChanging = true
     self.mapChangingTime = time()
 
-    C_Timer.After(
+    C_Timer_After(
         3,
         function()
             if self.mapChangingTime == now then
@@ -261,7 +280,7 @@ function CORE:OnInitialize()
     self:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE", "MapChanging")
     self:RegisterEvent("PLAYER_ENTERING_WORLD", "MapChanging")
 
-    C_Timer.NewTicker(
+    C_Timer_NewTicker(
         10,
         function()
             local now = time()

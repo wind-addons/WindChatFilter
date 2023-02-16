@@ -1,5 +1,7 @@
 local W, F, L, P, G, O = unpack(select(2, ...))
 
+local loadstring = loadstring
+
 local codeSnippet =
     [[
 local api = _G.WindChatFilter.API

@@ -1,5 +1,8 @@
 local W, F, L = unpack(select(2, ...))
 
+local error = error
+local type = type
+
 _G[W.AddonNamePlain].API = {}
 local API = _G[W.AddonNamePlain].API
 

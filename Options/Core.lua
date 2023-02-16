@@ -7,6 +7,8 @@ local ADBO = LibStub("AceDBOptions-3.0")
 local LDB = LibStub("LibDataBroker-1.1")
 local LDBI = LibStub("LibDBIcon-1.0")
 
+local ipairs = ipairs
+
 local CreateFrame = CreateFrame
 local Settings = Settings
 
