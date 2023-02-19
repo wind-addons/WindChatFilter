@@ -10,7 +10,6 @@ local tinsert = tinsert
 local wipe = wipe
 
 local ChatFrame_AddMessageEventFilter = ChatFrame_AddMessageEventFilter
-local ChatFrame_RemoveMessageEventFilter = ChatFrame_RemoveMessageEventFilter
 local IsGuildMember = IsGuildMember
 local IsInInstance = IsInInstance
 
@@ -34,11 +33,14 @@ local eventToChannel = {
     ["CHAT_MSG_YELL"] = "Yell",
     ["CHAT_MSG_WHISPER"] = "Whisper",
     ["CHAT_MSG_WHISPER_INFORM"] = "Whisper",
+    ["CHAT_MSG_INSTANCE_CHAT"] = "Instance",
+    ["CHAT_MSG_INSTANCE_CHAT_LEADER"] = "Instance",
     ["CHAT_MSG_RAID"] = "Raid",
     ["CHAT_MSG_RAID_LEADER"] = "Raid",
     ["CHAT_MSG_PARTY"] = "Party",
     ["CHAT_MSG_PARTY_LEADER"] = "Party",
     ["CHAT_MSG_GUILD"] = "Guild",
+    ["CHAT_MSG_OFFICER"] = "Guild",
     ["CHAT_MSG_BATTLEGROUND"] = "Battleground",
     ["CHAT_MSG_EMOTE"] = "Emote"
 }
@@ -272,7 +274,7 @@ end
 function CORE:OnInitialize()
     self.db = W.db.core
 
-    if not self.db.enable then
+    if not self.db.enable or self.initialized then
         return
     end
 
@@ -292,18 +294,9 @@ function CORE:OnInitialize()
         end
     )
 
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_BATTLEGROUND", messageHandler)
-    ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", messageHandler)
+    for channel, _ in pairs(eventToChannel) do
+        ChatFrame_AddMessageEventFilter(channel, messageHandler)
+    end
 
     self.initialized = true
 end
@@ -313,25 +306,8 @@ function CORE:ProfileUpdate()
 
     self:RebuildRules()
 
-    if not self.db.enable then
-        if self.initialized then
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BATTLEGROUND", messageHandler)
-            ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", messageHandler)
-        end
-    else
-        if not self.initialized then
-            self:OnInitialize()
-        end
+    if self.db.enable then
+        self:OnInitialize()
     end
 end
 
