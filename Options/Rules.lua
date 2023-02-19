@@ -442,25 +442,30 @@ local function channelOptions(context, order)
                         name = L["Raid"],
                         order = 7
                     },
+                    instance = {
+                        type = "toggle",
+                        name = L["Instance"],
+                        order = 8
+                    },
                     trade = {
                         type = "toggle",
                         name = L["Trade"],
-                        order = 8
+                        order = 9
                     },
                     general = {
                         type = "toggle",
                         name = L["General Chat"],
-                        order = 9
+                        order = 10
                     },
                     newcomer = {
                         type = "toggle",
                         name = L["Newcomer Chat"],
-                        order = 10
+                        order = 11
                     },
                     battleground = {
                         type = "toggle",
                         name = L["Battleground"],
-                        order = 11
+                        order = 12
                     }
                 }
             }
@@ -1055,17 +1060,18 @@ local emptyRule = {
     },
     channel = {
         enabled = false,
-        say = false,
-        yell = false,
-        whisper = false,
+        battleground = false,
         emote = false,
+        general = false,
         guild = false,
+        instance = false,
+        newcomer = false,
         party = false,
         raid = false,
+        say = false,
         trade = false,
-        general = false,
-        newcomer = false,
-        battleground = false,
+        whisper = false,
+        yell = false,
         channelNames = {}
     },
     map = {
