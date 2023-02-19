@@ -100,6 +100,7 @@ L["Include Friend"] = true
 L["Include Guild Member"] = true
 L["Include Myself"] = true
 L["Information"] = "Information"
+L["Instance"] = "Instance"
 L["Invalid map ID."] = true
 L["KOOK"] = true
 L["Keyword"] = true

@@ -100,6 +100,7 @@ L["Include Friend"] = "包含好友"
 L["Include Guild Member"] = "包含公會成員"
 L["Include Myself"] = "包含自己"
 L["Information"] = "訊息"
+L["Instance"] = "副本"
 L["Invalid map ID."] = "無效的地圖 ID."
 L["KOOK"] = true
 L["Keyword"] = "關鍵字"
