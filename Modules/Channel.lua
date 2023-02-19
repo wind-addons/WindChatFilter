@@ -23,16 +23,17 @@ local newcomerChannelNames = {
 }
 
 local availableConfigKeys = {
-    "say",
-    "yell",
-    "whisper",
+    "battleground",
     "emote",
+    "general",
     "guild",
+    "instance",
     "party",
     "raid",
+    "say",
     "trade",
-    "general",
-    "battleground"
+    "whisper",
+    "yell"
 }
 
 local function getChannelFilter(rule)
