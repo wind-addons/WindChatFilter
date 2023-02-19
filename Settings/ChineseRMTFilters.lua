@@ -164,6 +164,7 @@ P.rules.blackList["__rmt_padaren_dk"] = {
         trade = true,
         general = true,
         newcomer = true,
+        instance = false,
         battleground = false,
         channelNames = {}
     },
@@ -273,6 +274,7 @@ P.rules.blackList["__rmt_cn_1"] = {
         trade = true,
         general = true,
         newcomer = true,
+        instance = false,
         battleground = false,
         channelNames = {
             ["組隊"] = true
@@ -360,6 +362,7 @@ P.rules.blackList["__rmt_cn_2"] = {
         trade = false,
         general = false,
         newcomer = false,
+        instance = false,
         battleground = false,
         channelNames = {}
     },
@@ -445,6 +448,7 @@ P.rules.blackList["__rmt_cn_3"] = {
         trade = true,
         general = true,
         newcomer = true,
+        instance = false,
         battleground = false,
         channelNames = {
             ["組隊"] = true
@@ -532,6 +536,7 @@ P.rules.blackList["__main_city_1"] = {
         trade = false,
         general = false,
         newcomer = false,
+        instance = false,
         battleground = false,
         channelNames = {}
     },
@@ -628,6 +633,7 @@ P.rules.blackList["__main_city_2"] = {
         trade = false,
         general = false,
         newcomer = false,
+        instance = false,
         battleground = false,
         channelNames = {}
     },
@@ -713,6 +719,7 @@ P.rules.blackList["__addon_1"] = {
         trade = false,
         general = false,
         newcomer = false,
+        instance = true,
         battleground = true,
         channelNames = {}
     },
@@ -804,6 +811,7 @@ P.rules.blackList["__addon_2"] = {
         trade = false,
         general = false,
         newcomer = false,
+        instance = true,
         battleground = true,
         channelNames = {}
     },
