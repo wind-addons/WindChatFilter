@@ -90,7 +90,9 @@ local RMTMessagekeywords = {
     ["第1赛季"] = true,
     ["%.%.%.%.%."] = true,
     ["靜思"] = true,
-    ["静思"] = true
+    ["静思"] = true,
+    ["全製造"] = true,
+    ["全制造"] = true
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
