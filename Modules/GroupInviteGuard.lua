@@ -2,6 +2,7 @@ local W, F, L = unpack(select(2, ...))
 local GIG = W:NewModule("GroupInviteGuard", "AceEvent-3.0")
 
 local format = format
+local gsub = gsub
 local pairs = pairs
 local strfind = strfind
 
@@ -36,6 +37,9 @@ local smartModeNames = {
     ["專車"] = true,
     ["找我"] = true
 }
+
+local suggestInvitePattern = string.gsub(_G.ERR_INFORM_SUGGEST_INVITE_SS, "%%%d$s", "(.+)")
+local linkedPlayers = {}
 
 function GIG:Reject(name)
     self:Log("debug", "Rejected group invitation from player: " .. name)
@@ -76,15 +80,52 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
                 if playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
                     self:Reject(name)
                 else
-                    for name, _ in pairs(smartModeNames) do
-                        if strfind(playerInfo.name, name) then
-                            self:Reject(name)
+                    for namePattern, _ in pairs(smartModeNames) do
+                        if strfind(playerInfo.name, namePattern) then
+                            self:Reject(namePattern)
                             break
+                        end
+                    end
+
+                    if linkedPlayers[name] then
+                        for linkedName, _ in pairs(linkedPlayers[name]) do
+                            for namePattern, _ in pairs(smartModeNames) do
+                                if strfind(linkedName, namePattern) then
+                                    self:Reject(format("%s (%s)", name, linkedName))
+                                    break
+                                end
+                            end
                         end
                     end
                 end
             end
         end
+    end
+end
+
+function GIG:LinkPlayers(_, message)
+    local inviter, leader
+
+    gsub(
+        message,
+        suggestInvitePattern,
+        function(...)
+            inviter, leader = ...
+        end
+    )
+
+    if inviter and leader then
+        if not linkedPlayers[inviter] then
+            linkedPlayers[inviter] = {}
+        end
+
+        linkedPlayers[inviter][leader] = true
+
+        if not linkedPlayers[leader] then
+            linkedPlayers[leader] = {}
+        end
+
+        linkedPlayers[leader][inviter] = true
     end
 end
 
@@ -96,6 +137,7 @@ function GIG:OnInitialize()
     end
 
     self:RegisterEvent("PARTY_INVITE_REQUEST", "RequestHandler")
+    self:RegisterEvent("CHAT_MSG_SYSTEM", "LinkPlayers")
 
     self.initialized = true
 end
