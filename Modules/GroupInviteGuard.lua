@@ -1,5 +1,6 @@
 local W, F, L = unpack(select(2, ...))
 local GIG = W:NewModule("GroupInviteGuard", "AceEvent-3.0")
+local C = W.Utilities.Color
 
 local format = format
 local gsub = gsub
@@ -35,7 +36,21 @@ local smartModeNames = {
     ["消費"] = true,
     ["专车"] = true,
     ["專車"] = true,
-    ["找我"] = true
+    ["找我"] = true,
+    ["裝備"] = true,
+    ["装备"] = true,
+    ["代打"] = true,
+    ["完美"] = true,
+    ["畢業"] = true,
+    ["毕业"] = true,
+    ["代练"] = true,
+    ["代練"] = true,
+    ["带刷"] = true,
+    ["帶刷"] = true,
+    ["帶你"] = true,
+    ["带你"] = true,
+    ["代你"] = true,
+    ["代刷"] = true
 }
 
 local suggestInvitePattern = string.gsub(_G.ERR_INFORM_SUGGEST_INVITE_SS, "%%%d$s", "(.+)")
@@ -45,7 +60,7 @@ function GIG:Reject(name)
     self:Log("debug", "Rejected group invitation from player: " .. name)
 
     if self.db.displayMessageAfterRejecting then
-        F.Print(format(L["Rejected group invitation from %s."], name))
+        F.Print(format(L["Rejected group invitation from %s."], C.StringByTemplate(name, "info")))
     end
 
     StaticPopup_Hide("PARTY_INVITE")
