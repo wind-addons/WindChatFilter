@@ -42,7 +42,8 @@ local eventToChannel = {
     ["CHAT_MSG_GUILD"] = "Guild",
     ["CHAT_MSG_OFFICER"] = "Guild",
     ["CHAT_MSG_BATTLEGROUND"] = "Battleground",
-    ["CHAT_MSG_EMOTE"] = "Emote"
+    ["CHAT_MSG_EMOTE"] = "Emote",
+    ["CHAT_MSG_TEXT_EMOTE"] = "Emote"
 }
 
 local handleCache = {}
