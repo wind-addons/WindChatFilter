@@ -91,8 +91,15 @@ local RMTMessagekeywords = {
     ["%.%.%.%.%."] = true,
     ["靜思"] = true,
     ["静思"] = true,
-    ["全製造"] = true,
-    ["全制造"] = true
+    ["全製"] = true,
+    ["全制"] = true,
+    ["多專"] = true,
+    ["多专"] = true,
+    ["全專"] = true,
+    ["全专"] = true,
+    ["全給"] = true,
+    ["全给"] = true,
+    ["网游"] = true
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
