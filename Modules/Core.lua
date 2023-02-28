@@ -1,5 +1,5 @@
 local W, F, L = unpack(select(2, ...))
-local CORE = W:NewModule("Core", "AceEvent-3.0")
+local CORE = W:NewModule("Core", "AceEvent-3.0", "AceTimer-3.0")
 
 local format = format
 local ipairs = ipairs
@@ -16,7 +16,6 @@ local IsInInstance = IsInInstance
 local C_BattleNet_GetAccountInfoByGUID = C_BattleNet.GetAccountInfoByGUID
 local C_FriendList_IsFriend = C_FriendList.IsFriend
 local C_Timer_After = C_Timer.After
-local C_Timer_NewTicker = C_Timer.NewTicker
 
 local blackList = {}
 local priorityOfBlackList = {}
@@ -156,12 +155,12 @@ local function getPriorityForList(list)
         end
     )
 
-    local result = {}
+    local r = {}
     for i, v in ipairs(cache) do
-        result[i] = v.name
+        r[i] = v.name
     end
 
-    return result
+    return r
 end
 
 function CORE:RegisterBlackList(name, filter)
@@ -272,6 +271,15 @@ function CORE:MapChanging()
     )
 end
 
+function CORE:CleanupCache()
+    local now = time()
+    for k, v in pairs(handleCache) do
+        if v.time + 10 < now then
+            handleCache[k] = nil
+        end
+    end
+end
+
 function CORE:OnInitialize()
     self.db = W.db.core
 
@@ -283,17 +291,7 @@ function CORE:OnInitialize()
     self:RegisterEvent("CHAT_MSG_CHANNEL_NOTICE", "MapChanging")
     self:RegisterEvent("PLAYER_ENTERING_WORLD", "MapChanging")
 
-    C_Timer_NewTicker(
-        10,
-        function()
-            local now = time()
-            for k, v in pairs(handleCache) do
-                if v.time < now - 10 then
-                    handleCache[k] = nil
-                end
-            end
-        end
-    )
+    self.cleanupCacheTimer = self:ScheduleRepeatingTimer("CleanupCache", 10)
 
     for channel, _ in pairs(eventToChannel) do
         ChatFrame_AddMessageEventFilter(channel, messageHandler)
