@@ -1110,6 +1110,7 @@ function F.CopyRule(rule, tbl, optTbl)
     local newRule = CopyTable(rule)
     newRule.priority = max(newRule.priority + 1, 1)
     newRule.name = rule.name .. " " .. L["Copy"]
+    newRule.enabled = false
     F.RefreshRuleOptions(tbl, optTbl, randomID, newRule)
     tbl[randomID] = newRule
     W:RefreshOptions()
