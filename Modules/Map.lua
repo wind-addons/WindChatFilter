@@ -9,12 +9,14 @@ local C_Timer_After = C_Timer.After
 
 local mainCityMaps = {
     [84] = true, -- Stormwind City
-    [85] = true, --	Orgrimmar - Orgrimmar
-    [86] = true, --	Orgrimmar - Cleft of Shadow
-    [87] = true, --	Ironforge
-    [88] = true, --	Thunder Bluff
-    [89] = true, --	Darnassus
-    [90] = true, --	Undercity
+    [85] = true, -- Orgrimmar - Orgrimmar
+    [86] = true, -- Orgrimmar - Cleft of Shadow
+    [87] = true, -- Ironforge
+    [88] = true, -- Thunder Bluff
+    [89] = true, -- Darnassus
+    [90] = true, -- Undercity
+    [1409] = true, -- Exile's Reach
+    [1727] = true, -- The North Sea
     [2112] = true -- Valdrakken
 }
 
