@@ -26,9 +26,11 @@ local RMTMessagekeywords = {
     ["专车"] = true,
     ["專車"] = true,
     ["化身巨龙牢窟"] = true,
+    ["化身巨龍牢窟"] = true,
     ["清水"] = true,
     ["躺尸"] = true,
     ["可躺"] = true,
+    ["可以躺"] = true,
     ["30人"] = true,
     ["微信"] = true,
     ["v信"] = true,
@@ -99,7 +101,9 @@ local RMTMessagekeywords = {
     ["全专"] = true,
     ["全給"] = true,
     ["全给"] = true,
-    ["网游"] = true
+    ["网游"] = true,
+    ["頂級團"] = true,
+    ["顶级团"] = true
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
