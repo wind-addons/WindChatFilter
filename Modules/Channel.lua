@@ -19,6 +19,7 @@ local generalChannelNames = {
 local newcomerChannelNames = {
     "Newcommer Chat",
     "新人频道",
+    "新手聊天",
     "新手頻道"
 }
 
