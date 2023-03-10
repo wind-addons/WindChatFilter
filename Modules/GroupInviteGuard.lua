@@ -116,6 +116,13 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
             end
         end
     end
+
+    if self.db.chatFilterMode then
+        local result, filterName = W:GetModule("Core"):GetChatFilterResult(name, guid)
+        if result then
+            self:Reject(filterName)
+        end
+    end
 end
 
 function GIG:LinkPlayers(_, message)
