@@ -136,6 +136,31 @@ local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelNa
     return result(false, guid, channel)
 end
 
+function CORE:GetChatFilterResult(sender, guid)
+    local data = {
+        channel = "",
+        message = "",
+        sender = sender,
+        guid = guid
+    }
+
+    for _, name in ipairs(priorityOfWhiteList) do
+        local filter = whiteList[name]
+        if filter and filter.func and filter.func(data) then
+            return false
+        end
+    end
+
+    for _, name in ipairs(priorityOfBlackList) do
+        local filter = blackList[name]
+        if filter and filter.func and filter.func(data) then
+            return true, name
+        end
+    end
+
+    return false
+end
+
 local function getPriorityForList(list)
     local cache = {}
     for name, filter in pairs(list) do

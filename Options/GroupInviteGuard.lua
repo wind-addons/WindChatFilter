@@ -71,6 +71,20 @@ O.groupInviteGuard = {
                     name = L["Display Message After Rejecting"],
                     desc = L["Display a message after rejecting a group invitation."],
                     width = "full"
+                },
+                chatFilterMode = {
+                    order = 4,
+                    type = "toggle",
+                    name = L["Chat Filter Mode"],
+                    desc = L["Use chat filter mode."],
+                    width = "full",
+                    set = function(_, value)
+                        W.db.groupInviteGuard.chatFilterMode = value
+                        if value then
+                            W.db.groupInviteGuard.smartMode = false
+                            W.db.groupInviteGuard.onlyFriendsOrGuildMembers = false
+                        end
+                    end
                 }
             }
         }
