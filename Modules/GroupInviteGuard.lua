@@ -7,6 +7,7 @@ local gsub = gsub
 local pairs = pairs
 local strfind = strfind
 
+local Ambiguate = Ambiguate
 local IsGuildMember = IsGuildMember
 local StaticPopup_Hide = StaticPopup_Hide
 
@@ -55,6 +56,7 @@ local smartModeNames = {
 
 local suggestInvitePattern = string.gsub(_G.ERR_INFORM_SUGGEST_INVITE_SS, "%%%d$s", "(.+)")
 local linkedPlayers = {}
+local whisperedTarget = {}
 
 function GIG:Reject(name)
     self:Log("debug", "Rejected group invitation from player: " .. name)
@@ -79,7 +81,14 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
     local isFriend = C_FriendList_IsFriend(guid)
     local isBNFriend = C_BattleNet_GetAccountInfoByGUID(guid) ~= nil
 
+    local ambiguatedName = Ambiguate(name, "none")
     local playerInfo = F.FetchPlayerInfo(guid)
+
+    if self.db.allowWhisperedTarget then
+        if whisperedTarget[ambiguatedName] then
+            return
+        end
+    end
 
     if self.db.onlyFriendsOrGuildMembers then
         if not (isGuildMember or isFriend or isBNFriend) then
@@ -156,6 +165,12 @@ function GIG:LinkPlayers(_, message)
     end
 end
 
+function GIG:RecordWhisperedTarget(_, _, playerName)
+    if playerName then
+        whisperedTarget[Ambiguate(playerName, "none")] = true
+    end
+end
+
 function GIG:OnInitialize()
     self.db = W.db.groupInviteGuard
 
@@ -165,6 +180,7 @@ function GIG:OnInitialize()
 
     self:RegisterEvent("PARTY_INVITE_REQUEST", "RequestHandler")
     self:RegisterEvent("CHAT_MSG_SYSTEM", "LinkPlayers")
+    self:RegisterEvent("CHAT_MSG_WHISPER_INFORM", "RecordWhisperedTarget")
 
     self.initialized = true
 end
