@@ -156,6 +156,11 @@ O.information = {
                 ["2"] = {
                     order = 2,
                     type = "description",
+                    name = format("%s", "kpkhxlgy0")
+                },
+                ["3"] = {
+                    order = 2,
+                    type = "description",
                     name = format(
                         "%s: %s",
                         "BlueNightSky",
