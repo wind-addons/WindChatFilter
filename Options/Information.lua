@@ -159,7 +159,7 @@ O.information = {
                     name = format("%s", "kpkhxlgy0")
                 },
                 ["3"] = {
-                    order = 2,
+                    order = 3,
                     type = "description",
                     name = format(
                         "%s: %s",
