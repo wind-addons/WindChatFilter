@@ -1,5 +1,19 @@
 local W, F, L, P, G, O = unpack(select(2, ...))
 
+local modes = {
+    "onlyFriendsOrGuildMembers",
+    "smartMode",
+    "chatFilterMode"
+}
+
+local function changeMode(mode)
+    if F.In(mode, modes) then
+        for _, _mode in pairs(modes) do
+            W.db.groupInviteGuard[_mode] = _mode == mode
+        end
+    end
+end
+
 O.groupInviteGuard = {
     order = 20,
     name = L["Group Invite Guard"],
@@ -36,55 +50,52 @@ O.groupInviteGuard = {
                     order = 1,
                     type = "toggle",
                     name = L["Enabled"],
-                    desc = L["Enable this module."],
-                    width = "full"
-                },
-                onlyFriendsOrGuildMembers = {
-                    order = 2,
-                    type = "toggle",
-                    name = L["Only Friends or Guild Members"],
-                    desc = L["Decline all group invites NOT from friends or guild members."],
                     width = "full",
-                    set = function(_, value)
-                        W.db.groupInviteGuard.onlyFriendsOrGuildMembers = value
-                        if value then
-                            W.db.groupInviteGuard.smartMode = false
-                        end
-                    end
-                },
-                smartMode = {
-                    order = 3,
-                    type = "toggle",
-                    name = L["Smart Mode"],
-                    desc = L["Believe me, it really works."],
-                    width = "full",
-                    set = function(_, value)
-                        W.db.groupInviteGuard.smartMode = value
-                        if value then
-                            W.db.groupInviteGuard.onlyFriendsOrGuildMembers = false
-                        end
-                    end
+                    desc = L["Enable this module."]
                 },
                 displayMessageAfterRejecting = {
-                    order = 4,
+                    order = 2,
                     type = "toggle",
-                    name = L["Display Message After Rejecting"],
-                    desc = L["Display a message after rejecting a group invitation."],
-                    width = "full"
+                    name = L["Reject Message"],
+                    desc = L["Display a message after rejecting a group invitation."]
                 },
-                chatFilterMode = {
+                modes = {
                     order = 4,
-                    type = "toggle",
-                    name = L["Chat Filter Mode"],
-                    desc = L["Use chat filter mode."],
-                    width = "full",
-                    set = function(_, value)
-                        W.db.groupInviteGuard.chatFilterMode = value
+                    type = "group",
+                    inline = true,
+                    name = L["Modes"],
+                    get = function(info)
+                        return W.db.groupInviteGuard[info[#info]]
+                    end,
+                    set = function(info, value)
                         if value then
-                            W.db.groupInviteGuard.smartMode = false
-                            W.db.groupInviteGuard.onlyFriendsOrGuildMembers = false
+                            changeMode(info[#info])
                         end
-                    end
+                    end,
+                    args = {
+                        smartMode = {
+                            order = 1,
+                            type = "toggle",
+                            name = L["Smart Mode"],
+                            desc = L["It should be worked in most cases, but not always."],
+                            width = 1.5
+                        },
+                        onlyFriendsOrGuildMembers = {
+                            order = 2,
+                            type = "toggle",
+                            name = L["Strict Mode"],
+                            desc = L["Decline all group invites NOT from friends or guild members."],
+                            width = 1.5
+                        },
+                        chatFilterMode = {
+                            order = 3,
+                            type = "toggle",
+                            name = L["Chat Filter Mode"],
+                            desc = L["Enable this mode to filter group invites with existing chat filters."] ..
+                                "\n" .. L["The filtering will ignore channel limitation of rules."],
+                            width = 1.5
+                        }
+                    }
                 }
             }
         }
