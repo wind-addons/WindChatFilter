@@ -116,9 +116,16 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
     end
 
     if self.db.chatFilterMode then
-        local result, filterName = W:GetModule("Core"):GetChatFilterResult(name, guid)
+        local nameForChatFilter = name
+        if linkedPlayers[name] then
+            for linkedName, _ in pairs(linkedPlayers[name]) do
+                nameForChatFilter = nameForChatFilter .. " " .. linkedName
+            end
+        end
+
+        local result, filterName = W:GetModule("Core"):GetChatFilterResult(nameForChatFilter, guid)
         if result then
-            self:Reject(filterName)
+            self:Reject(name)
         end
     end
 end
