@@ -29,7 +29,8 @@ O.groupInviteGuard = {
                     order = 1,
                     type = "description",
                     fontSize = "medium",
-                    name = L["This module will help you to automatically decline group invitations."],
+                    name = L["This module will help you to automatically decline group invitations."] ..
+                        "\n" .. L["This feature does not block invitations from premade groups."],
                     width = "full"
                 }
             }
