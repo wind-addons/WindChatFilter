@@ -59,6 +59,12 @@ O.groupInviteGuard = {
                     name = L["Reject Message"],
                     desc = L["Display a message after rejecting a group invitation."]
                 },
+                allowWhisperedTarget = {
+                    order = 3,
+                    type = "toggle",
+                    name = L["Allow Whispered Target"],
+                    desc = L["Allow group invites from players who you sent whispers recently."]
+                },
                 modes = {
                     order = 4,
                     type = "group",
