@@ -161,6 +161,7 @@ L["The rule which has higher priority will be applied first."] = true
 L["The rules below will be applied to the black list."] = true
 L["The sub-modules of each rule (e.g. the message module) are independent of each other."] = true
 L["This channel name has already been added."] = true
+L["This feature does not block invitations from premade groups."] = true
 L["This is a custom rule."] = true
 L["This is a default rule and cannot be deleted."] = true
 L["This keyword has already been added."] = true

@@ -161,6 +161,7 @@ L["The rule which has higher priority will be applied first."] = "優先度高�
 L["The rules below will be applied to the black list."] = "下面的規則將被視作自動攔截對象."
 L["The sub-modules of each rule (e.g. the message module) are independent of each other."] = "每個規則的子模組 (例如訊息模組) 互相獨立."
 L["This channel name has already been added."] = "這個頻道名稱已經被添加."
+L["This feature does not block invitations from premade groups."] = "這個功能並不會阻擋來自預組隊伍的邀請."
 L["This is a custom rule."] = "這是一個自訂規則."
 L["This is a default rule and cannot be deleted."] = "這是一個預設規則, 不能被刪除."
 L["This keyword has already been added."] = "這個關鍵字已經被添加."
