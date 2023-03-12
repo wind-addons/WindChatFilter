@@ -91,25 +91,23 @@ function GIG:RequestHandler(_, name, _, _, _, _, _, guid)
         if not (isGuildMember or isFriend or isBNFriend) then
             local playerInfo = F.FetchPlayerInfo(guid)
 
-            if playerInfo then
-                if playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
-                    self:Reject(name)
-                else
-                    for namePattern, _ in pairs(smartModeNames) do
-                        if strfind(playerInfo.name, namePattern) then
-                            self:Reject(namePattern)
-                            break
-                        end
-                    end
+            if playerInfo and playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
+                self:Reject(name)
+            end
 
-                    if linkedPlayers[name] then
-                        for linkedName, _ in pairs(linkedPlayers[name]) do
-                            for namePattern, _ in pairs(smartModeNames) do
-                                if strfind(linkedName, namePattern) then
-                                    self:Reject(format("%s (%s)", name, linkedName))
-                                    break
-                                end
-                            end
+            for namePattern, _ in pairs(smartModeNames) do
+                if strfind(name, namePattern) then
+                    self:Reject(name)
+                    break
+                end
+            end
+
+            if linkedPlayers[name] then
+                for linkedName, _ in pairs(linkedPlayers[name]) do
+                    for namePattern, _ in pairs(smartModeNames) do
+                        if strfind(linkedName, namePattern) then
+                            self:Reject(format("%s (%s)", name, linkedName))
+                            break
                         end
                     end
                 end
