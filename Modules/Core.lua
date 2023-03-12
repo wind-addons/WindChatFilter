@@ -96,9 +96,7 @@ local function messageHandler(_, event, msg, sender, _, _, _, _, _, _, channelNa
         return false
     end
 
-    if channel == "Channel" then
-        channel = channelName
-    end
+    channel = channel == "Channel" and channelName or channel
 
     local cache = handleCache[guid .. "_" .. channel]
     if cache and cache.time + 1 > time() then

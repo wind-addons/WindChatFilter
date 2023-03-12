@@ -87,7 +87,15 @@ local function getChannelFilter(rule)
             return true
         end
 
+        if rule.channel.instance and data.channel == "Instance" then
+            return true
+        end
+
         if rule.channel.raid and data.channel == "Raid" then
+            return true
+        end
+
+        if rule.channel.battleground and data.channel == "Battleground" then
             return true
         end
 
@@ -113,10 +121,6 @@ local function getChannelFilter(rule)
                     return true
                 end
             end
-        end
-
-        if rule.channel.battleground and data.channel == "Battleground" then
-            return true
         end
 
         if rule.channel.channelNames then
