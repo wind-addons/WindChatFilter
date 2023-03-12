@@ -129,10 +129,9 @@ O.information = {
                 format(L["Thank you for using %s!"], L["Wind Chat Filter"]),
                 format(L["%s is an addon aimed to filter some chat messages in game."], L["Wind Chat Filter"]),
                 format(
-                    L["You can send your suggestions or bugs via %s, %s, %s, %s and the thread in %s."],
+                    L["You can send your suggestions or bugs via %s, %s, %s and the thread in %s."],
                     L["QQ Group"],
                     L["Discord"],
-                    L["KOOK"],
                     L["GitHub"],
                     L["NGA.cn"]
                 )
@@ -238,23 +237,8 @@ O.information = {
                     end,
                     width = 0.6
                 },
-                kook = {
-                    order = 4,
-                    type = "execute",
-                    name = L["KOOK"],
-                    image = W.Media.Icons.kook,
-                    func = function()
-                        StaticPopup_Show(
-                            "WIND_CHAT_FILTER_EDITBOX",
-                            L["Wind Chat Filter"] .. " - " .. L["KOOK"],
-                            nil,
-                            "https://kook.top/oRTgkL"
-                        )
-                    end,
-                    width = 0.6
-                },
                 github = {
-                    order = 5,
+                    order = 4,
                     type = "execute",
                     name = L["GitHub"],
                     image = W.Media.Icons.github,

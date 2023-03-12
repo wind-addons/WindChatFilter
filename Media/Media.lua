@@ -103,7 +103,6 @@ AddMedia("discord", "Discord.tga", "Icons")
 AddMedia("github", "GitHub.tga", "Icons")
 AddMedia("nga", "NGA.tga", "Icons")
 AddMedia("qq", "QQ.tga", "Icons")
-AddMedia("kook", "KOOK.tga", "Icons")
 
 AddMedia("donateKofi", "Ko-fi.tga", "Icons")
 AddMedia("donateAiFaDian", "AiFaDian.tga", "Icons")
