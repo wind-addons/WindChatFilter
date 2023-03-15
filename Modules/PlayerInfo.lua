@@ -140,7 +140,7 @@ local function getPlayerInfoFilter(rule)
             local matched = false
 
             for name, _ in pairs(matchNames) do
-                if strfind(playerInfo.name, name) then
+                if strfind(playerInfo.name, name) or strfind(data.sender, name) then
                     matched = true
                     break
                 end
