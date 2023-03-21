@@ -1,13 +1,13 @@
 <div align="center">
 <img width="512" src="Title.svg"/><br><br>
-<img src="https://img.shields.io/badge/版本-1.3.1-green.svg?longCache=true&style=for-the-badge"/>
+<img src="https://img.shields.io/badge/版本-1.3.2-green.svg?longCache=true&style=for-the-badge"/>
 
 [English (enUS)](README.md) | [繁體中文 (zhTW)](README_zhTW.md)
 </div>
 
 # ✅ 状态
 
-![发布测试状态](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.3.1) [![加入 Discord 服务器](https://img.shields.io/badge/Wind%20Plugins-加入-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/SPqB72z7TK)
+![发布测试状态](https://img.shields.io/github/actions/workflow/status/fang2hou/WindChatFilter/publish_stable.yml?branch=1.3.2) [![加入 Discord 服务器](https://img.shields.io/badge/Wind%20Plugins-加入-grey.svg?longCache=true&color=7289DA&logo=discord)](https://discord.gg/SPqB72z7TK)
 
 下载地址: [Curse](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) | [Wago](https://addons.wago.io/addons/windchatfilter) | [GitHub 发布](https://github.com/fang2hou/WindChatFilter/releases)
 
