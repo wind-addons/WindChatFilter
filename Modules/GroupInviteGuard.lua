@@ -15,6 +15,10 @@ local C_BattleNet_GetAccountInfoByGUID = C_BattleNet.GetAccountInfoByGUID
 local C_FriendList_IsFriend = C_FriendList.IsFriend
 
 local smartModeNames = {
+    ["打團"] = true,
+    ["打团"] = true,
+    ["打本"] = true,
+    ["打副"] = true,
     ["专车"] = true,
     ["代你"] = true,
     ["代充"] = true,
