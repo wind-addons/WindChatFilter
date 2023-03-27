@@ -66,7 +66,12 @@ function GIG:Reject(name)
     self:Log("debug", "Rejected group invitation from player: " .. name)
 
     if self.db.displayMessageAfterRejecting then
-        F.Print(format(L["Rejected group invitation from %s."], C.StringByTemplate(name, "info")))
+        local message = format(L["Rejected group invitation from %s."], C.StringByTemplate(name, "info"))
+        if self.db.allowWhisperedTarget then
+            message =
+                message .. " " .. L["You can whisper the player once to add him/her to the whitelist temporarily."]
+        end
+        F.Print(message)
     end
 
     StaticPopup_Hide("PARTY_INVITE")
