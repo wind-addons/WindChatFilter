@@ -177,4 +177,5 @@ L["Wind Chat Filter"] = "|cff5385edW|r|cff528eeci|r|cff5096ean|r|cff4e9fe8d|r |c
 L["WoW Build"] = true
 L["Yell"] = "외치기"
 L["You can send your suggestions or bugs via %s, %s, %s and the thread in %s."] = "%s, %s, %s 및 %s의 스레드를 통해 제안이나 버그 리포트를 보낼 수 있습니다."
+L["You can whisper the player once to add him/her to the whitelist temporarily."] = true
 L["You must recomplie the rules to apply the changes."] = true

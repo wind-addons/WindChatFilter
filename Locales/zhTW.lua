@@ -177,4 +177,5 @@ L["Wind Chat Filter"] = "|cff5385edW|r|cff5093eai|r|cff4ea1e8n|r|cff4bb0e5d|r |c
 L["WoW Build"] = "魔獸世界版本號"
 L["Yell"] = "大喊"
 L["You can send your suggestions or bugs via %s, %s, %s and the thread in %s."] = "你可以透過 %s, %s, %s 和在 %s 的帖子來回報錯誤和建議."
+L["You can whisper the player once to add him/her to the whitelist temporarily."] = "你可以密語該玩家一次來暫時將他/她加入白名單."
 L["You must recomplie the rules to apply the changes."] = "你必須重新編譯規則以套用更改."
