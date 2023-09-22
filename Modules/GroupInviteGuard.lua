@@ -179,9 +179,9 @@ function GIG:Reject(name, type)
         DeclineGroup()
         StaticPopup_Hide("PARTY_INVITE")
     elseif type == "confirmation" then
-        DeclineGroup()
         StaticPopup_Hide("GROUP_INVITE_CONFIRMATION")
     elseif type == "lfg" and _G.LFGInvitePopup then
+        DeclineGroup()
         StaticPopupSpecial_Hide(_G.LFGInvitePopup)
     end
 
@@ -189,7 +189,7 @@ function GIG:Reject(name, type)
 end
 
 -- merged some logic from https://wago.io/w5brqr3O5
-function GIG:RequestHandler(_, name, tank, healer, damage, isNativeRealm, isConfirmation, guid)
+function GIG:RequestHandler(_, name, tank, healer, damage, _, isConfirmation, guid)
     if not self.db.enabled then
         return
     end
@@ -243,7 +243,7 @@ function GIG:RequestHandler(_, name, tank, healer, damage, isNativeRealm, isConf
                 for linkedName, _ in pairs(linkedPlayers[name]) do
                     for namePattern, _ in pairs(smartModeNames) do
                         if strfind(linkedName, namePattern) then
-                            self:Reject(format("%s (%s)", name, linkedName))
+                            self:Reject(format("%s (%s)", name, linkedName), inviteType)
                             break
                         end
                     end
