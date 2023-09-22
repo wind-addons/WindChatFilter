@@ -208,6 +208,95 @@ P.rules.blackList["__rmt_padaren_dk"] = {
     }
 }
 
+P.rules.blackList["__rmt_dnd"] = {
+    enabled = true,
+    name = L["DND Character"],
+    description = L["Filter DND characters."],
+    priority = -1,
+    playerInfo = {
+        enabled = false,
+        config = {
+            race = false,
+            class = false,
+            name = false,
+            realm = false
+        },
+        class = {
+            DEMONHUNTER = false,
+            DEATHKNIGHT = false,
+            WARRIOR = false,
+            MAGE = false,
+            ROGUE = false,
+            DRUID = false,
+            HUNTER = false,
+            SHAMAN = false,
+            PRIEST = false,
+            WARLOCK = false,
+            PALADIN = false,
+            MONK = false,
+            EVOKER = false
+        },
+        race = {
+            Pandaren = false,
+            Dracthyr = false,
+            Human = false,
+            Dwarf = false,
+            NightElf = false,
+            Gnome = false,
+            Draenei = false,
+            Worgen = false,
+            VoidElf = false,
+            LightforgedDraenei = false,
+            DarkIronDwarf = false,
+            KulTiran = false,
+            Mechagnome = false,
+            Orc = false,
+            Scourge = false,
+            Tauren = false,
+            Troll = false,
+            BloodElf = false,
+            Goblin = false,
+            Nightborne = false,
+            HighmountainTauren = false,
+            MagharOrc = false,
+            ZandalariTroll = false,
+            Vulpera = false,
+            includeHostileFaction = false,
+            includeNeutral = false
+        },
+        name = {},
+        realm = {}
+    },
+    channel = {
+        enabled = true,
+        system = false,
+        dnd = true,
+        say = false,
+        yell = false,
+        whisper = false,
+        emote = false,
+        guild = false,
+        party = false,
+        raid = false,
+        trade = false,
+        general = false,
+        newcomer = false,
+        instance = false,
+        battleground = false,
+        channelNames = {}
+    },
+    map = {
+        enabled = false,
+        mainCity = false,
+        mapIDs = {
+        }
+    },
+    message = {
+        enabled = false,
+        keywords = {}
+    }
+}
+
 P.rules.blackList["__rmt_cn_1"] = {
     enabled = W.isChineseClient,
     name = L["RMT Name"],
