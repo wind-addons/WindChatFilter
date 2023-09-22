@@ -176,8 +176,10 @@ function GIG:Reject(name, type)
     MuteSoundFile(567464)
 
     if type == "party" then
+        DeclineGroup()
         StaticPopup_Hide("PARTY_INVITE")
     elseif type == "confirmation" then
+        DeclineGroup()
         StaticPopup_Hide("GROUP_INVITE_CONFIRMATION")
     elseif type == "lfg" and _G.LFGInvitePopup then
         StaticPopupSpecial_Hide(_G.LFGInvitePopup)
@@ -348,6 +350,13 @@ function GIG:OnInitialize()
     end
 
     self:RegisterEvent("PARTY_INVITE_REQUEST", "RequestHandler")
+    self:RegisterEvent(
+        "GROUP_INVITE_CONFIRMATION",
+        function()
+            local _, name, guid = GetInviteConfirmationInfo(GetNextPendingInviteConfirmation())
+            self:RequestHandler(nil, name, nil, nil, nil, true, guid)
+        end
+    )
     self:RegisterEvent("CHAT_MSG_SYSTEM", "LinkPlayers")
     self:RegisterEvent("CHAT_MSG_WHISPER_INFORM", "RecordWhisperedTarget")
 
