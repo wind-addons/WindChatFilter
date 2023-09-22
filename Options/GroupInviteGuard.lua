@@ -69,8 +69,8 @@ O.groupInviteGuard = {
                 muteAlreadyInGroupSound = {
                     order = 4,
                     type = "toggle",
-                    name = L["Mute Already In Group Sound"],
-                    desc = L["Mute the sound that alerts you when you are already in a group."],
+                    name = L["Mute Already In Group SE"],
+                    desc = L["Mute the sound effect that alerts you when you are already in a group."],
                     set = function(info, value)
                         W.db.groupInviteGuard[info[#info]] = value
                         W:GetModule("GroupInviteGuard"):ProfileUpdate()
