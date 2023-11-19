@@ -27,6 +27,9 @@ local RMTMessagekeywords = {
     ["消費"] = true,
     ["专车"] = true,
     ["專車"] = true,
+    ["专业團隊"] = true,
+    ["包車"] = true,
+    ["包车"] = true,
     ["化身巨龙牢窟"] = true,
     ["化身巨龍牢窟"] = true,
     ["『朧影實驗場』亞貝魯斯"] = true,
@@ -35,6 +38,11 @@ local RMTMessagekeywords = {
     ["亚贝鲁斯，焰影熔炉"] = true,
     ["亚贝鲁斯"] = true,
     ["焰影熔炉"] = true,
+    ["阿梅达希尔，梦境之愿"] = true,
+    ["阿梅达希尔"] = true,
+    ["梦境之愿"] = true,
+    ["『夢境希望』埃達希爾"] = true,
+    ["埃達希爾"] = true,
     ["清水"] = true,
     ["躺尸"] = true,
     ["可躺"] = true,
@@ -115,7 +123,11 @@ local RMTMessagekeywords = {
     ["永恒黎明"] = true,
     ["新新"] = true,
     ["防封"] = true,
-    ["自己上"] = true
+    ["自己上"] = true,
+    ["宝 库"] = true,
+    ["宏 伟"] = true,
+    ["wowbusin"] = true,
+    ["陪 一"] = true
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
@@ -288,8 +300,7 @@ P.rules.blackList["__rmt_dnd"] = {
     map = {
         enabled = false,
         mainCity = false,
-        mapIDs = {
-        }
+        mapIDs = {}
     },
     message = {
         enabled = false,
@@ -376,7 +387,8 @@ P.rules.blackList["__rmt_cn_1"] = {
             ["專車"] = true,
             ["找我"] = true,
             ["靜思"] = true,
-            ["静思"] = true
+            ["静思"] = true,
+            ["优惠"] = true
         },
         realm = {}
     },
