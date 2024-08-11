@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Pull the latest version
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
       - name: Auto Packaging
         uses: BigWigsMods/packager@master
         env:
