@@ -21,7 +21,7 @@ ns[5] = {
         includeMyself = false,
         includeFriend = false,
         includeGuildMember = false,
-        playerInfoCacheExpiration = 7 * 24 * 60 * 60,
+        playerInfoCacheExpiration = 5 * 24 * 60 * 60,
         logLevel = 1,
         doNotUseGUIDCache = false
     },
