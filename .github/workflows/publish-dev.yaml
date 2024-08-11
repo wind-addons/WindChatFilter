@@ -3,8 +3,8 @@ name: 🧪 Publish Test Version
 on:
   push:
     tags:
-      - "**alpha**"
-      - "**beta**"
+      - '**alpha**'
+      - '**beta**'
 
 jobs:
   build:
