@@ -7,11 +7,6 @@ local StaticPopup_Show = StaticPopup_Show
 
 local wowVersion, wowPatch = GetBuildInfo()
 
-local discordURL = "https://discord.gg/WHDER5SATV"
-if W.Locale == "zhCN" or W.Locale == "zhTW" then
-    discordURL = "https://discord.gg/SPqB72z7TK"
-end
-
 _G.StaticPopupDialogs["WIND_CHAT_FILTER_EDITBOX"] = {
     text = "",
     button1 = _G.OKAY,
@@ -217,7 +212,7 @@ O.information = {
                             "WIND_CHAT_FILTER_EDITBOX",
                             L["Wind Chat Filter"] .. " - " .. L["Discord"],
                             nil,
-                            discordURL
+                            "https://discord.gg/CMDsBmhvyW"
                         )
                     end,
                     width = 0.6
@@ -247,7 +242,7 @@ O.information = {
                             "WIND_CHAT_FILTER_EDITBOX",
                             L["Wind Chat Filter"] .. " - " .. L["GitHub"],
                             nil,
-                            "https://github.com/fang2hou/" .. W.AddonNamePlain .. "/issues"
+                            "https://github.com/wind-addons/" .. W.AddonNamePlain .. "/issues"
                         )
                     end,
                     width = 0.6

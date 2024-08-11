@@ -11,7 +11,7 @@
 
 ## 📥 下载
 
-[![CurseForge](https://img.shields.io/badge/CurseForge-FF784D?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) [![Wago](https://img.shields.io/badge/%F0%9F%90%B5%20Wago%20Addons-212121?style=for-the-badge)](https://addons.wago.io/addons/windchatfilter) [![Github 发布](https://img.shields.io/badge/GitHub%20Release-121013?style=for-the-badge&logo=github&logoColor=white)](https://github.com/fang2hou/WindChatFilter/releases)
+[![CurseForge](https://img.shields.io/badge/CurseForge-FF784D?style=for-the-badge&logo=curseforge&logoColor=white)](https://www.curseforge.com/wow/addons/wind-chat-filter-wcf) [![Wago](https://img.shields.io/badge/%F0%9F%90%B5%20Wago%20Addons-212121?style=for-the-badge)](https://addons.wago.io/addons/windchatfilter) [![Github 发布](https://img.shields.io/badge/GitHub%20Release-121013?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wind-addons/WindChatFilter/releases)
 
 ## 💝 捐助
 
