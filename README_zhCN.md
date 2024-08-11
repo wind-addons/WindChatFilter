@@ -1,8 +1,6 @@
 <div align="center">
 <img width="512" alt="标题" src="https://raw.githubusercontent.com/wind-addons/resources/main/dist/addons/wind-chat-filter/logo.svg"/><br><br>
 
-![版本](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-1.5.0-538AED.svg?longCache=true&style=for-the-badge)
-
 [![Discord](https://img.shields.io/discord/747075771213807707?color=7289DA&label=DISCORD&logo=discord&style=for-the-badge)](https://discord.gg/CMDsBmhvyW) [![GitHub Stars](https://img.shields.io/github/stars/wind-addons/WindChatFilter?style=for-the-badge&label=GitHub%20Stars%20%E2%AD%90&logo=github&color=yellow)](https://github.com/wind-addons/WindChatFilter)
 
 简体中文 (zhCN) | [繁體中文 (zhTW)](README_zhTW.md) | [English (enUS)](README.md)
