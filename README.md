@@ -1,7 +1,7 @@
 <div align="center">
 <img width="512" alt="Title" src="https://raw.githubusercontent.com/wind-addons/resources/main/dist/addons/wind-chat-filter/logo.svg"/><br><br>
 
-![Version](https://img.shields.io/badge/%E7%89%88%E6%9C%AC-1.5.0-538AED.svg?longCache=true&style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.5.0-538AED.svg?longCache=true&style=for-the-badge)
 
 [![Discord](https://img.shields.io/discord/747075771213807707?color=7289DA&label=DISCORD&logo=discord&style=for-the-badge)](https://discord.gg/CMDsBmhvyW) [![GitHub Stars](https://img.shields.io/github/stars/wind-addons/WindChatFilter?style=for-the-badge&label=GitHub%20Stars%20%E2%AD%90&logo=github&color=yellow)](https://github.com/wind-addons/WindChatFilter)
 
