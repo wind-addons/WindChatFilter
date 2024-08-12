@@ -121,6 +121,7 @@ L["Modes"] = true
 L["Mute Already In Group SE"] = true
 L["Mute the sound effect that alerts you when you are already in a group."] = true
 L["NGA.cn"] = true
+L["NetEase Message"] = true
 L["Neutral Factions"] = true
 L["New Rule"] = "Neue Regel"
 L["New Rule Name"] = true
