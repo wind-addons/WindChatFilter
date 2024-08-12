@@ -792,6 +792,96 @@ P.rules.blackList["__main_city_2"] = {
     }
 }
 
+P.rules.blackList["__netease"] = {
+    enabled = true,
+    name = L["NetEase Message"],
+    description = L["Filter some announcement messages if you feel annoying."],
+    priority = -29,
+    playerInfo = {
+        enabled = false,
+        config = {
+            race = false,
+            class = false,
+            name = false,
+            realm = false
+        },
+        class = {
+            DEMONHUNTER = false,
+            DEATHKNIGHT = false,
+            WARRIOR = false,
+            MAGE = false,
+            ROGUE = false,
+            DRUID = false,
+            HUNTER = false,
+            SHAMAN = false,
+            PRIEST = false,
+            WARLOCK = false,
+            PALADIN = false,
+            MONK = false,
+            EVOKER = false
+        },
+        race = {
+            Pandaren = false,
+            Dracthyr = false,
+            Human = false,
+            Dwarf = false,
+            NightElf = false,
+            Gnome = false,
+            Draenei = false,
+            Worgen = false,
+            VoidElf = false,
+            LightforgedDraenei = false,
+            DarkIronDwarf = false,
+            KulTiran = false,
+            Mechagnome = false,
+            Orc = false,
+            Scourge = false,
+            Tauren = false,
+            Troll = false,
+            BloodElf = false,
+            Goblin = false,
+            Nightborne = false,
+            HighmountainTauren = false,
+            MagharOrc = false,
+            ZandalariTroll = false,
+            Vulpera = false,
+            includeHostileFaction = false,
+            includeNeutral = false
+        },
+        name = {},
+        realm = {}
+    },
+    channel = {
+        enabled = true,
+        system = true,
+        dnd = false,
+        say = false,
+        yell = false,
+        whisper = false,
+        emote = false,
+        guild = false,
+        party = false,
+        raid = false,
+        trade = false,
+        general = false,
+        newcomer = false,
+        instance = false,
+        battleground = false,
+        channelNames = {}
+    },
+    map = {
+        enabled = false,
+        mainCity = false,
+        mapIDs = {}
+    },
+    message = {
+        enabled = true,
+        keywords = {
+            ["网易暴雪"] = true
+        }
+    }
+}
+
 P.rules.blackList["__addon_1"] = {
     enabled = true,
     name = L["Addon Message"],
