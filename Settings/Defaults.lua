@@ -877,7 +877,8 @@ P.rules.blackList["__netease"] = {
     message = {
         enabled = true,
         keywords = {
-            ["网易暴雪"] = true
+            ["网易暴雪"] = true,
+            ["G M"] = true
         }
     }
 }
