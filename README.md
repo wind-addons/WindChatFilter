@@ -37,6 +37,8 @@
 
    - RMT Character
      - A rule for filtering Pandaren Death Knight while you are in the main city.
+   - DND Character
+     - A rule for filtering all messages from DND character.
    - RMT Name
      - A rule for filtering RMT character name.
    - RMT Message 1
@@ -47,6 +49,15 @@
      - A rule for filtering delayed addon message in say / yell channel. (e.g. Thundering WA message)
    - Unknown Message
      - A rule for filtering unknown message from enemy faction.
+   - NetEase Message
+     - A rule for filtering messages from NetEase.
+   - Addon Message
+     - A rule for filtering addon message or some messages from annoying WeakAuras.
+   - Addon Announcement
+     - A rule for filtering announcement message (e.g. interrupt, dispel, etc.) from addons.
+   - Crafting Message
+     - A rule for filtering crafting advertisement message.
+
 3. **Group Invite Guard**
 
    Recently, the RMT characters have been frequently inviting players to send their ads. You can use the Group Invite Guard module in Wind Chat Filter to automatically reject their invites.
