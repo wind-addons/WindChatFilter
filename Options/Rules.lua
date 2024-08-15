@@ -476,7 +476,7 @@ local function channelOptions(context, order)
                         type = "toggle",
                         name = L["Do Not Disturb"],
                         order = 14
-                    },
+                    }
                 }
             }
         }
@@ -663,6 +663,7 @@ local function playerInfoOptions(context, order)
                 hidden = function()
                     return not context.rule.playerInfo.enabled
                 end,
+                disabled = context.isDefault,
                 args = {
                     enabled = {
                         order = 1,
@@ -690,6 +691,7 @@ local function playerInfoOptions(context, order)
                 hidden = function()
                     return not context.rule.playerInfo.enabled
                 end,
+                disabled = context.isDefault,
                 args = {
                     enabled = {
                         order = 1,
