@@ -55,7 +55,6 @@ local smartModeNames = {
     ["清水"] = true,
     ["畢業"] = true,
     ["秘境"] = true,
-    ["秘境"] = true,
     ["米境"] = true,
     ["装备"] = true,
     ["裝備"] = true,

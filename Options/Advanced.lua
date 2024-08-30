@@ -129,7 +129,6 @@ O.advanced = {
                         F.CleanupPlayerInfoCache()
                         W:GetModule("Core"):RebuildRules()
                     end,
-                    width = 1.5
                 }
             }
         },
