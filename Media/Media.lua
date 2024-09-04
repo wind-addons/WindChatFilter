@@ -7,7 +7,7 @@ local strupper = strupper
 
 W.Media = {
 	Icons = {},
-	Textures = {}
+	Textures = {},
 }
 
 local MediaPath = "Interface/Addons/" .. W.AddonNamePlain .. "/Media/"
@@ -32,10 +32,10 @@ do
 		texWidth = 1024,
 		languages = {
 			-- {offsetY, width, height}
-			enUS = {0, 430, 102},
-			zhCN = {150, 378, 112},
-			zhTW = {300, 385, 114}
-		}
+			enUS = { 0, 430, 102 },
+			zhCN = { 150, 378, 112 },
+			zhTW = { 300, 385, 114 },
+		},
 	}
 
 	function F.GetTitleSize(scale)
@@ -50,7 +50,7 @@ do
 			end,
 			height = function()
 				return scale * data[3]
-			end
+			end,
 		}
 	end
 
@@ -60,12 +60,12 @@ do
 			return
 		end
 
-		return {0, data[2] / texTable.texWidth, data[1] / texTable.texHeight, (data[1] + data[3]) / texTable.texHeight}
+		return { 0, data[2] / texTable.texWidth, data[1] / texTable.texHeight, (data[1] + data[3]) / texTable.texHeight }
 	end
 end
 
 function F.GetClassIconStyleList()
-	return {"flat", "flatborder", "flatborder2", "round", "square", "warcraftflat"}
+	return { "flat", "flatborder", "flatborder2", "round", "square", "warcraftflat" }
 end
 
 function F.GetClassIconWithStyle(class, style)

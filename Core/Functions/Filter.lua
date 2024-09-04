@@ -7,50 +7,50 @@ local time = time
 local GetPlayerInfoByGUID = GetPlayerInfoByGUID
 
 function F.CleanupPlayerInfoCache(onlyExpired)
-    local now = time()
-    for guid, playerInfo in pairs(W.global.playerInfoCache) do
-        if not onlyExpired or now - playerInfo.updateTime > W.global.advanced.playerInfoCacheExpiration then
-            W.global.playerInfoCache[guid] = nil
-        end
-    end
+	local now = time()
+	for guid, playerInfo in pairs(W.global.playerInfoCache) do
+		if not onlyExpired or now - playerInfo.updateTime > W.global.advanced.playerInfoCacheExpiration then
+			W.global.playerInfoCache[guid] = nil
+		end
+	end
 end
 
 function F.ForceUpdatePlayerInfo(guid)
-    local result
+	local result
 
-    local ok, _, englishClass, _, englishRace, _, name, realm = pcall(GetPlayerInfoByGUID, guid)
-    if ok and englishClass and englishRace and name then
-        result = {
-            class = englishClass,
-            race = englishRace,
-            name = name,
-            realm = realm,
-            updateTime = time()
-        }
-    end
+	local ok, _, englishClass, _, englishRace, _, name, realm = pcall(GetPlayerInfoByGUID, guid)
+	if ok and englishClass and englishRace and name then
+		result = {
+			class = englishClass,
+			race = englishRace,
+			name = name,
+			realm = realm,
+			updateTime = time(),
+		}
+	end
 
-    if not W.global.advanced.doNotUseGUIDCache then
-        W.global.playerInfoCache[guid] = result
-    end
+	if not W.global.advanced.doNotUseGUIDCache then
+		W.global.playerInfoCache[guid] = result
+	end
 
-    return result
+	return result
 end
 
 function F.FetchPlayerInfo(guid)
-    if not guid then
-        return
-    end
+	if not guid then
+		return
+	end
 
-    local playerInfo = W.global.playerInfoCache[guid]
+	local playerInfo = W.global.playerInfoCache[guid]
 
-    if W.global.advanced.doNotUseGUIDCache or not playerInfo then
-        playerInfo = F.ForceUpdatePlayerInfo(guid)
-    else
-        local playerInfo = W.global.playerInfoCache[guid]
-        if time() - playerInfo.updateTime > W.global.advanced.playerInfoCacheExpiration then
-            playerInfo = F.ForceUpdatePlayerInfo(guid)
-        end
-    end
+	if W.global.advanced.doNotUseGUIDCache or not playerInfo then
+		playerInfo = F.ForceUpdatePlayerInfo(guid)
+	else
+		local playerInfo = W.global.playerInfoCache[guid]
+		if time() - playerInfo.updateTime > W.global.advanced.playerInfoCacheExpiration then
+			playerInfo = F.ForceUpdatePlayerInfo(guid)
+		end
+	end
 
-    return playerInfo
+	return playerInfo
 end

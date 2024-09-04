@@ -26,12 +26,8 @@ Engine.isChineseClient = Engine.Locale == "zhCN" or Engine.Locale == "zhTW"
 Engine.myGUID = UnitGUID("player")
 Engine.myFaction = UnitFactionGroup("player")
 
-hooksecurefunc(
-    Engine,
-    "NewModule",
-    function(_, name)
-        addon[2].Developer.InjectLogger(name)
-    end
-)
+hooksecurefunc(Engine, "NewModule", function(_, name)
+	addon[2].Developer.InjectLogger(name)
+end)
 
 _G[Engine.AddonNamePlain] = addon
