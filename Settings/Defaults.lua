@@ -1169,6 +1169,7 @@ P.rules.blackList["__craft"] = {
 			["稳三"] = true,
 			["稳3"] = true,
 			["包5"] = true,
+			["包五"] = true,
 			["包60"] = true,
 			["包材料"] = true,
 			["免费稳"] = true,
