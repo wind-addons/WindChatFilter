@@ -1173,6 +1173,10 @@ P.rules.blackList["__craft"] = {
 			["包60"] = true,
 			["包材料"] = true,
 			["免费稳"] = true,
+			["有做"] = true,
+			["五星"] = true,
+			["5星"] = true,
+			["5 星"] = true,
 		},
 	},
 }
