@@ -1146,7 +1146,9 @@ P.rules.blackList["__craft"] = {
         instance = false,
         battleground = false,
         channelNames = {
-            ["組隊"] = true
+            ["組隊"] = true,
+            ["大脚"] = true,
+            ["大腳"] = true
         }
     },
     map = {
