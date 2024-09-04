@@ -134,6 +134,8 @@ function F.Developer.InjectLogger(module)
 
 			level = strlower(level)
 
+			message = gsub(message, "\124", "\124\124")
+
 			local richMessage = format("|cfff6781d[%s]|r %s", self:GetName(), message)
 			if level == "info" then
 				F.Developer.LogInfo(richMessage)
