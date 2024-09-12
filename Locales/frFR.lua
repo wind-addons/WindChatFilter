@@ -187,4 +187,3 @@ L["WoW Build"] = "Version de WoW"
 L["Yell"] = "Crier"
 L["You can send your suggestions or bugs via %s, %s, %s and the thread in %s."] = "Vous pouvez envoyer vos suggestions ou bugs via %s, %s, %s et le fil de discussion dans %s."
 L["You can whisper the player once to add him/her to the whitelist temporarily."] = true
-L["You must recomplie the rules to apply the changes."] = true
