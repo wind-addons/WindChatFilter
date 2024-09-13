@@ -144,7 +144,7 @@ O.information = {
 					name = format(
 						"%s: %s",
 						"fang2hou",
-						F.CreateClassColorString("Tabideath @ " .. L["Shadowmoon"] .. "(TW)", "DEATHKNIGHT")
+						F.CreateClassColorString("Tabimonk @ " .. L["Shadowmoon"] .. "(TW)", "MONK")
 					),
 				},
 				["2"] = {
