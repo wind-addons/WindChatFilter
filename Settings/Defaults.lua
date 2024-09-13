@@ -1,6 +1,9 @@
 local W, F, L, P = unpack(select(2, ...))
 
-local RMTMessagekeywords = {
+local RMTMessageKeywords = {
+	["打 本"] = true,
+	["团 本"] = true,
+	["团~本"] = true,
 	["信："] = true,
 	["wow33"] = true,
 	["賣金"] = true,
@@ -485,7 +488,7 @@ P.rules.blackList["__rmt_cn_2"] = {
 	},
 	message = {
 		enabled = true,
-		keywords = RMTMessagekeywords,
+		keywords = RMTMessageKeywords,
 	},
 }
 
@@ -577,7 +580,7 @@ P.rules.blackList["__rmt_cn_3"] = {
 	},
 	message = {
 		enabled = true,
-		keywords = RMTMessagekeywords,
+		keywords = RMTMessageKeywords,
 	},
 }
 
