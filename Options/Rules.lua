@@ -29,20 +29,21 @@ _G.StaticPopupDialogs["WIND_CHAT_FILTER_NEW_RULE"] = {
 	button2 = L["Cancel"],
 	hasEditBox = true,
 	OnShow = function(self, data)
-		self.editBox:SetAutoFocus(false)
-		self.editBox.originalWidth = self.editBox:GetWidth()
-		self.editBox:SetWidth(250)
-		self.editBox:AddHistoryLine(L["New Rule"])
-		self.editBox:SetText(L["New Rule"])
-		self.editBox:HighlightText()
-		self.editBox:SetJustifyH("CENTER")
+		self.EditBox:SetAutoFocus(false)
+		self.EditBox.originalWidth = self.EditBox:GetWidth()
+		self.EditBox:SetWidth(250)
+		self.EditBox:AddHistoryLine(L["New Rule"])
+		self.EditBox:SetText(L["New Rule"])
+		self.EditBox:HighlightText()
+		self.EditBox:SetJustifyH("CENTER")
 	end,
 	OnHide = function(self)
-		self.editBox:SetWidth(self.editBox.originalWidth or 50)
-		self.editBox.originalWidth = nil
+		self.EditBox:SetWidth(self.EditBox.originalWidth or 50)
+		self.EditBox.originalWidth = nil
 	end,
 	EditBoxOnEnterPressed = function(self, data)
-		F.CreateNewRuleWithName(self.editBox:GetText(), data.table, data.optionTable)
+		F.CreateNewRuleWithName(self:GetText(), data.table, data.optionTable)
+		self:GetParent():Hide()
 	end,
 	EditBoxOnEscapePressed = function(self)
 		self:GetParent():Hide()
@@ -51,7 +52,7 @@ _G.StaticPopupDialogs["WIND_CHAT_FILTER_NEW_RULE"] = {
 		return
 	end,
 	OnAccept = function(self, data)
-		F.CreateNewRuleWithName(self.editBox:GetText(), data.table, data.optionTable)
+		F.CreateNewRuleWithName(self.EditBox:GetText(), data.table, data.optionTable)
 	end,
 	whileDead = true,
 	preferredIndex = 3,
