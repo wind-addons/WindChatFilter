@@ -81,7 +81,7 @@ function W:BuildOptions()
 	self.OptionFrame, self.OptionName = ACD:AddToBlizOptions(self.AddonNamePlain, self.AddonName)
 	self.DataBroker = LDB:NewDataObject(L["Wind Chat Filter"], {
 		type = "data source",
-		text = "WDH",
+		text = "WCF",
 		icon = W.Media.Icons.icon,
 		OnClick = function()
 			W:ShowOptions()
@@ -92,7 +92,7 @@ function W:BuildOptions()
 		end,
 	})
 
-	LDBI:Register(L["Wind Chat Filter"], self.DataBroker, self.db.minimapIcon)
+	LDBI:Register("WindChatFilter", self.DataBroker, self.db.minimapIcon)
 
 	for _, func in ipairs(self.postInitFunctions) do
 		func()
