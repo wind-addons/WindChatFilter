@@ -107,6 +107,7 @@ local RMTMessageKeywords = {
 	["面前"] = true,
 	["頂級團"] = true,
 	["顶级团"] = true,
+	["亲自上"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
