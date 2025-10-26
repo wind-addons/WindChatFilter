@@ -954,6 +954,11 @@ P.rules.blackList["__addon_1"] = {
 			["^<LFG>"] = true,
 			["^<大腳"] = true,
 			["^<大脚"] = true,
+			["^大脚任务"] = true,
+			["^大腳任務"] = true,
+			["←施放"] = true,
+			["完成%)$"] = true,
+			["！**$"] = true,
 		},
 	},
 }
