@@ -49,11 +49,12 @@ local options = {
 		rebuild = {
 			order = 999,
 			type = "execute",
-			name = F.GetIconString([[Interface\Buttons\UI-RefreshButton]], 14, 14)
-				.. " "
-				.. L["Apply"]
-				.. " "
-				.. format("|cffff0000%s|r", L["The change will not take effect until you apply it!"]),
+			name = format(
+				"%s %s |cffff0000%s|r",
+				F.GetIconString([[Interface\Buttons\UI-RefreshButton]], 14, 14),
+				L["Apply"],
+				L["The change will not take effect until you apply it!"]
+			),
 			width = "full",
 			hidden = function()
 				return not isRuleUpdated

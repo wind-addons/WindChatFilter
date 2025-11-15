@@ -226,8 +226,6 @@ function GIG:RequestHandler(_, name, tank, healer, damage, _, isConfirmation, gu
 
 	if self.db.smartMode then
 		if not (isGuildMember or isFriend or isBNFriend) then
-			local playerInfo = F.FetchPlayerInfo(guid)
-
 			if playerInfo and playerInfo.race == "Pandaren" and playerInfo.class == "DEATHKNIGHT" then
 				self:Reject(name, inviteType)
 			end
@@ -270,7 +268,7 @@ end
 function GIG:LinkPlayers(_, message)
 	local inviter, leader
 
-	gsub(message, suggestInvitePattern, function(...)
+	local _ = gsub(message, suggestInvitePattern, function(...)
 		inviter, leader = ...
 	end)
 

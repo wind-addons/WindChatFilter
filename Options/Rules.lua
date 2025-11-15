@@ -507,6 +507,7 @@ local englishRaceToID = {
 	neutral = {
 		Pandaren = 24,
 		Dracthyr = 52,
+		EarthenDwarf = 85,
 	},
 	alliance = {
 		Human = 1,
