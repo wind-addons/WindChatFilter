@@ -24,16 +24,18 @@ local newcomerChannelNames = {
 }
 
 local availableConfigKeys = {
-	"system",
-	"dnd",
 	"battleground",
+	"boss",
+	"dnd",
 	"emote",
 	"general",
 	"guild",
 	"instance",
+	"monster",
 	"party",
 	"raid",
 	"say",
+	"system",
 	"trade",
 	"whisper",
 	"yell",
@@ -106,6 +108,14 @@ local function getChannelFilter(rule)
 		end
 
 		if rule.channel.battleground and data.channel == "Battleground" then
+			return true
+		end
+
+		if rule.channel.boss and data.channel == "Boss" then
+			return true
+		end
+
+		if rule.channel.monster and data.channel == "Monster" then
 			return true
 		end
 

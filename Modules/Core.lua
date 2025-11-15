@@ -46,6 +46,12 @@ local eventToChannel = {
 	["CHAT_MSG_BATTLEGROUND"] = "Battleground",
 	["CHAT_MSG_EMOTE"] = "Emote",
 	["CHAT_MSG_TEXT_EMOTE"] = "Emote",
+	["CHAT_MSG_MONSTER_SAY"] = "Monster",
+	["CHAT_MSG_MONSTER_YELL"] = "Monster",
+	["CHAT_MSG_MONSTER_EMOTE"] = "Monster",
+	["CHAT_MSG_MONSTER_WHISPER"] = "Monster",
+	["CHAT_MSG_RAID_BOSS_EMOTE"] = "Boss",
+	["CHAT_MSG_RAID_BOSS_WHISPER"] = "Boss",
 }
 
 local handleCache = {}

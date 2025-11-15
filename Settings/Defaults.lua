@@ -187,6 +187,8 @@ P.rules.blackList["__rmt_padaren_dk"] = {
 		newcomer = true,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -277,6 +279,8 @@ P.rules.blackList["__rmt_dnd"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -389,6 +393,8 @@ P.rules.blackList["__rmt_cn_1"] = {
 		newcomer = true,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {
 			["組隊"] = true,
 		},
@@ -481,6 +487,8 @@ P.rules.blackList["__rmt_cn_2"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -571,6 +579,8 @@ P.rules.blackList["__rmt_cn_3"] = {
 		newcomer = true,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {
 			["組隊"] = true,
 			["大脚"] = true,
@@ -663,6 +673,8 @@ P.rules.blackList["__main_city_1"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -762,6 +774,8 @@ P.rules.blackList["__main_city_2"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -850,6 +864,8 @@ P.rules.blackList["__netease"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -860,8 +876,8 @@ P.rules.blackList["__netease"] = {
 	message = {
 		enabled = true,
 		keywords = {
-			["网易暴雪"] = true,
-			["G M"] = true,
+			["即能获得探险者的套装"] = true,
+			["^重返艾泽拉斯（第"] = true,
 		},
 	},
 }
@@ -941,6 +957,8 @@ P.rules.blackList["__addon_1"] = {
 		newcomer = false,
 		instance = true,
 		battleground = true,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -1040,6 +1058,8 @@ P.rules.blackList["__addon_2"] = {
 		newcomer = false,
 		instance = true,
 		battleground = true,
+		boss = false,
+		monster = false,
 		channelNames = {},
 	},
 	map = {
@@ -1134,6 +1154,8 @@ P.rules.blackList["__craft"] = {
 		newcomer = false,
 		instance = false,
 		battleground = false,
+		boss = false,
+		monster = false,
 		channelNames = {
 			["組隊"] = true,
 			["大脚"] = true,
