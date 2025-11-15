@@ -44,19 +44,19 @@ local function getChannelFilter(rule)
 		return nil
 	end
 
-	local configIsVaild = false
+	local configIsValid = false
 	for _, key in pairs(availableConfigKeys) do
 		if rule.channel[key] then
-			configIsVaild = true
+			configIsValid = true
 			break
 		end
 	end
 
 	if rule.channel.channelNames and next(rule.channel.channelNames) then
-		configIsVaild = true
+		configIsValid = true
 	end
 
-	if not configIsVaild then
+	if not configIsValid then
 		return nil
 	end
 
