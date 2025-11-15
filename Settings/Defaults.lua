@@ -110,6 +110,9 @@ local RMTMessageKeywords = {
 	["亲自上"] = true,
 	["亲 自"] = true,
 	["欢 迎"] = true,
+	["深星水螅"] = true,
+	["英勇的缰绳"] = true,
+	["秒拿"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
