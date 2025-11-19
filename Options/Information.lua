@@ -212,6 +212,16 @@ O.information = {
 						F.CreateClassColorString("三皈依 @ " .. L["Shadowmoon"] .. "(TW)", "SHAMAN")
 					),
 				},
+				["4"] = {
+					order = 4,
+					type = "description",
+					name = "Hollicsh",
+				},
+				["5"] = {
+					order = 5,
+					type = "description",
+					name = "ZamestoTV",
+				},
 			},
 		},
 		version = {
