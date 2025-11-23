@@ -112,6 +112,7 @@ local RMTMessageKeywords = {
 	["欢 迎"] = true,
 	["深星水螅"] = true,
 	["英勇的缰绳"] = true,
+	["团队的荣耀"] = true,
 	["秒拿"] = true,
 }
 
