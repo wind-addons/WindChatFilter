@@ -114,6 +114,7 @@ local RMTMessageKeywords = {
 	["英勇的缰绳"] = true,
 	["团队的荣耀"] = true,
 	["秒拿"] = true,
+	["幽灵虎坐骑"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
@@ -381,6 +382,7 @@ P.rules.blackList["__rmt_cn_1"] = {
 			["靜思"] = true,
 			["静思"] = true,
 			["优惠"] = true,
+			["雪商"] = true,
 		},
 		realm = {},
 	},
