@@ -115,6 +115,12 @@ local RMTMessageKeywords = {
 	["团队的荣耀"] = true,
 	["秒拿"] = true,
 	["幽灵虎坐骑"] = true,
+	["PAY IN RAID"] = true,
+	["WTS"] = true,
+	["berlutee"] = true,
+	["0封"] = true,
+	["GOLD ONLY"] = true,
+	["%-70%-80"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
