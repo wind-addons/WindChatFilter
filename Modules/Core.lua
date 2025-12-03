@@ -9,7 +9,7 @@ local time = time
 local tinsert = tinsert
 local wipe = wipe
 
-local ChatFrame_AddMessageEventFilter = ChatFrame_AddMessageEventFilter
+local ChatFrameUtil_AddMessageEventFilter = ChatFrameUtil.AddMessageEventFilter
 local IsGuildMember = IsGuildMember
 local IsInInstance = IsInInstance
 
@@ -323,7 +323,7 @@ function CORE:OnInitialize()
 	self.cleanupCacheTimer = self:ScheduleRepeatingTimer("CleanupCache", 10)
 
 	for channel, _ in pairs(eventToChannel) do
-		ChatFrame_AddMessageEventFilter(channel, messageHandler)
+		ChatFrameUtil_AddMessageEventFilter(channel, messageHandler)
 	end
 
 	self.initialized = true
