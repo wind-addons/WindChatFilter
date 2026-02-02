@@ -121,6 +121,8 @@ local RMTMessageKeywords = {
 	["0封"] = true,
 	["GOLD ONLY"] = true,
 	["%-70%-80"] = true,
+	["免費咨詢"] = true,
+	["免费咨询"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
