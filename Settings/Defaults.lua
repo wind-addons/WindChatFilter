@@ -123,6 +123,7 @@ local RMTMessageKeywords = {
 	["%-70%-80"] = true,
 	["免費咨詢"] = true,
 	["免费咨询"] = true,
+	["歡迎詢問"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
