@@ -124,6 +124,10 @@ local RMTMessageKeywords = {
 	["免費咨詢"] = true,
 	["免费咨询"] = true,
 	["歡迎詢問"] = true,
+	["可詢問"] = true,
+	["便宜賣"] = true,
+	["2500分"] = true,
+	["賣M"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
