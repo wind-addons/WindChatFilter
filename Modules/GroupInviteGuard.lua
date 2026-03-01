@@ -5,6 +5,7 @@ local C = W.Utilities.Color
 
 local format = format
 local gsub = gsub
+local issecretvalue = issecretvalue
 local pairs = pairs
 local strfind = strfind
 
@@ -194,7 +195,7 @@ function GIG:RequestHandler(_, name, tank, healer, damage, _, isConfirmation, gu
 		return
 	end
 
-	if not guid or guid == "" or guid == W.myGUID then
+	if issecretvalue(guid) or issecretvalue(name) or not guid or guid == "" or guid == W.myGUID then
 		return
 	end
 
@@ -266,6 +267,10 @@ function GIG:RequestHandler(_, name, tank, healer, damage, _, isConfirmation, gu
 end
 
 function GIG:LinkPlayers(_, message)
+	if issecretvalue(message) or not message then
+		return
+	end
+
 	local inviter, leader
 
 	local _ = gsub(message, suggestInvitePattern, function(...)
@@ -288,7 +293,7 @@ function GIG:LinkPlayers(_, message)
 end
 
 function GIG:RecordWhisperedTarget(_, _, playerName)
-	if playerName then
+	if not issecretvalue(playerName) and playerName then
 		whisperedTarget[Ambiguate(playerName, "none")] = true
 	end
 end
