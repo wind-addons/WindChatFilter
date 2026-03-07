@@ -1,7 +1,6 @@
 local W, F, L, P = unpack(select(2, ...))
 
 local RMTMessageKeywords = {
-	["%.%.%.%.%."] = true,
 	["10M"] = true,
 	["10层"] = true,
 	["10層"] = true,
@@ -26,7 +25,6 @@ local RMTMessageKeywords = {
 	["专业團隊"] = true,
 	["专车"] = true,
 	["业务"] = true,
-	["两件"] = true,
 	["亲手"] = true,
 	["亲自"] = true,
 	["信："] = true,
@@ -519,7 +517,7 @@ P.rules.blackList["__rmt_cn_2"] = {
 		enabled = true,
 		mainCity = true,
 		mapIDs = {
-			["2339"] = true,
+			["2393"] = true,
 		},
 	},
 	message = {
