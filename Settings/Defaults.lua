@@ -128,6 +128,7 @@ local RMTMessageKeywords = {
 	["便宜賣"] = true,
 	["2500分"] = true,
 	["賣M"] = true,
+	["收.+坐骑"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
@@ -905,6 +906,8 @@ P.rules.blackList["__netease"] = {
 		keywords = {
 			["即能获得探险者的套装"] = true,
 			["^重返艾泽拉斯（第"] = true,
+			["^即刻登录魔兽世界"] = true,
+			["^快号召你的朋友"] = true,
 		},
 	},
 }
