@@ -1238,6 +1238,9 @@ P.rules.blackList["__craft"] = {
 			["公函"] = true,
 			["论述"] = true,
 			["%d星"] = true,
+			["两件"] = true,
+			["带卖"] = true,
+			["打包任"] = true,
 		},
 	},
 }
