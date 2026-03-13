@@ -910,6 +910,7 @@ P.rules.blackList["__netease"] = {
 			["^快号召你的朋友"] = true,
 			["至暗之夜已经到来"] = true,
 			["“菜单”（ESC）-“活动”"] = true,
+			["^请谨记行事负责"] = true,
 		},
 	},
 }
