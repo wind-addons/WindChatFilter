@@ -127,6 +127,7 @@ local RMTMessageKeywords = {
 	["2500分"] = true,
 	["賣M"] = true,
 	["收.+坐骑"] = true,
+	["卖.+虎"] = true,
 }
 
 P.rules.blackList["__rmt_padaren_dk"] = {
@@ -395,6 +396,7 @@ P.rules.blackList["__rmt_cn_1"] = {
 			["静思"] = true,
 			["优惠"] = true,
 			["雪商"] = true,
+			["商行"] = true,
 		},
 		realm = {},
 	},
